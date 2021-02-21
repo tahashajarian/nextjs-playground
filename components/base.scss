@@ -1,0 +1,24 @@
+$primary: #0078ff;
+$secondry: #169981;
+$white: #ffffff;
+
+$xxsFontSize: 6pt;
+$xsFontSize: 8pt;
+$smFontSize: 10pt;
+$mdFontSize: 12pt;
+$lgFontSize: 14pt;
+$xlFontSize: 16pt;
+$xxlFontSize: 20pt;
+
+@mixin flex() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-column() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

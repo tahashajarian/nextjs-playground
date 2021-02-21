@@ -1,0 +1,128 @@
+@import "../components/base.scss";
+
+@mixin smButton {
+  outline: none;
+  border: none;
+  @include flex();
+  cursor: pointer;
+  font-size: $smFontSize;
+  border-radius: 20px;
+  padding: 6px 12px;
+}
+
+@mixin mdButton {
+  outline: none;
+  border: none;
+  @include flex();
+  cursor: pointer;
+  font-size: $mdFontSize;
+  border-radius: 30px;
+  padding: 10px 20px;
+}
+
+@mixin lgButton {
+  outline: none;
+  border: none;
+  @include flex();
+  cursor: pointer;
+  font-size: $lgFontSize;
+  border-radius: 40px;
+  padding: 15px 30px;
+}
+
+.heading2Xl {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.05rem;
+  margin: 1rem 0;
+}
+
+.headingXl {
+  font-size: 2rem;
+  line-height: 1.3;
+  font-weight: 800;
+  letter-spacing: -0.05rem;
+  margin: 1rem 0;
+}
+
+.headingLg {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin: 1rem 0;
+}
+
+.headingMd {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.borderCircle {
+  border-radius: 9999px;
+}
+
+.colorInherit {
+  color: inherit;
+}
+
+.padding1px {
+  padding-top: 1px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.listItem {
+  margin: 0 0 1.25rem;
+}
+
+.lightText {
+  color: #666;
+}
+
+.lgButtonPrimary {
+  @include lgButton();
+  background: $primary;
+  color: $white;
+}
+
+.mdButtonPrimary {
+  @include mdButton();
+  background: $primary;
+  color: $white;
+}
+
+.mdButtonSecondry {
+  @include mdButton();
+  background: $secondry;
+  color: $white;
+}
+
+.mdButtonPrimaryOutline {
+  @include mdButton();
+  border: 1px solid $primary;
+  color: $primary;
+  background: transparent;
+}
+
+.mdButtonSecondryOutline {
+  @include mdButton();
+  border: 1px solid $secondry;
+  color: $secondry;
+  background: transparent;
+}
+
+.smButtonPrimary {
+  @include smButton();
+  background: $primary;
+  color: $white;
+}
+
+.navLink {
+  color: gray;
+  text-decoration: none;
+  font-size: $mdFontSize;
+}
