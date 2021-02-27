@@ -1,0 +1,11 @@
+@import "../base.scss";
+
+.container {
+  // padding: 0 1rem;
+  @include flex-column();
+}
+
+.main {
+  width: 100%;
+  max-width: 1366px;
+}

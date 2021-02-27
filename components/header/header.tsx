@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./header.module.scss";
-import utils from "../styles/utils.module.scss";
+import utils from "../../styles/utils.module.scss";
 import Link from "next/link";
 import Image from "next/image";
 interface Props {
@@ -11,7 +11,7 @@ const Header = (props: Props) => (
   <header className={style.header}>
     <span className={style.icon}>
       <Image
-        src="/images/icon.png" // Route of the image file
+        src="/images/logo.svg" // Route of the image file
         height={50} // Desired size with correct aspect ratio
         width={50} // Desired size with correct aspect ratio
         alt="Your Name"

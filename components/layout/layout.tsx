@@ -1,10 +1,10 @@
 import Head from "next/head";
 import Image from "next/image";
-import style from "./layout.module.css";
+import style from "./layout.module.scss";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
-import Header from "./header";
-import { Footer } from "./footer";
+import Header from "../header/header";
+import { Footer } from "../footer/footer";
 
 export const siteTitle = "اعتبار من";
 export const pages = [
@@ -19,7 +19,7 @@ export default function Layout({ children, home }) {
   return (
     <div className={style.container}>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/images/logo.svg" />
         <meta
           name="description"
           content="Learn how to build a personal website using Next.js"
@@ -35,8 +35,8 @@ export default function Layout({ children, home }) {
       <main className={style.main}>
         <Header pages={pages} />
         <div>{children}</div>
-        <Footer pages={pages} />
       </main>
+      <Footer pages={pages} />
     </div>
   );
 }

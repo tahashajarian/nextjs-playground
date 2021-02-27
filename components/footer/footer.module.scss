@@ -1,0 +1,33 @@
+@import "../base.scss";
+
+.footerContainer {
+  width: 100%;
+  position: relative;
+  color: $white;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg, $primary 0%, $primary 35%, $secondry 100%);
+  .footer {
+    @include flex();
+    > div {
+      margin: 0 5%;
+      > ul {
+        list-style: none;
+      }
+    }
+  }
+  .title {
+    font-weight: bold;
+  }
+  .legend {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: $secondry;
+    left: calc(50% + 30px);
+    top: -50px;
+    @include flex();
+    img {
+      transform: rotate(45deg);
+    }
+  }
+}

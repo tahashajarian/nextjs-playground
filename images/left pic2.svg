@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="841.408" height="1256.707" viewBox="0 0 841.408 1256.707">
+    <defs>
+        <linearGradient id="i9bi86xbgb" x1=".842" x2=".292" y1=".901" y2=".281" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#005abf"/>
+            <stop offset="1" stop-color="#1ed6b5"/>
+        </linearGradient>
+        <linearGradient id="xpedm16zlc" x1=".842" x2=".292" y1=".901" y2=".281" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#0078ff"/>
+            <stop offset="1" stop-color="#1ed6b5"/>
+        </linearGradient>
+        <linearGradient id="rnpllc3fod" x1=".842" x2=".292" y1=".901" y2=".281" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#2b73c4"/>
+            <stop offset="1" stop-color="#68e8d1"/>
+        </linearGradient>
+        <clipPath id="o8cm9hdzga">
+            <path d="M-2902.883 2808.1l-192.291-192.291V1592.4h192.813l607.591 607.591a140 140 0 0 1 0 197.99l-410.122 410.119a139.563 139.563 0 0 1-99 41.005 139.563 139.563 0 0 1-98.991-41.005z" transform="translate(3095.174 -1592.398)"/>
+        </clipPath>
+    </defs>
+    <g clip-path="url(#o8cm9hdzga)">
+        <path fill="#fff" d="M-3045.011 2950.229l-50.163-50.163V1592.4h192.812l607.592 607.591a140 140 0 0 1 0 197.989l-552.25 552.251a139.562 139.562 0 0 1-99 41 139.562 139.562 0 0 1-98.991-41.002z" transform="translate(3095.174 -1592.398)"/>
+        <path d="M-3045.011 2950.229l-50.163-50.163V1592.4h192.812l607.592 607.591a140 140 0 0 1 0 197.989l-552.25 552.251a139.562 139.562 0 0 1-99 41 139.562 139.562 0 0 1-98.991-41.002z" transform="translate(3095.174 -1592.398)" style="isolation:isolate;mix-blend-mode:multiply" fill="url(#i9bi86xbgb)" opacity="0.5"/>
+        <path d="M-3025.475 2991.4a139.888 139.888 0 0 1-35.092-25.612l-34.606-34.606V1592.4h192.812l607.591 607.591a140 140 0 0 1 0 197.99l-567.807 567.806a139.889 139.889 0 0 1-35.092 25.612z" transform="translate(3095.174 -1592.398)" style="mix-blend-mode:color;isolation:isolate" fill="url(#xpedm16zlc)" opacity="0.5"/>
+        <path d="M-3045.011 2950.229l-50.163-50.163V1592.4h192.812l607.592 607.591a140 140 0 0 1 0 197.989l-552.25 552.251a139.562 139.562 0 0 1-99 41 139.562 139.562 0 0 1-98.991-41.002z" transform="translate(3095.174 -1592.398)" style="mix-blend-mode:screen;isolation:isolate" fill="url(#rnpllc3fod)" opacity="0.4"/>
+    </g>
+</svg>
