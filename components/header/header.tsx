@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./header.module.scss";
-import utils from "../../styles/utils.module.scss";
+import utils from "../utils.module.scss";
 import Link from "next/link";
 import Image from "next/image";
 interface Props {

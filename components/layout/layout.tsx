@@ -1,18 +1,16 @@
 import Head from "next/head";
 import Image from "next/image";
 import style from "./layout.module.scss";
-import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 import Header from "../header/header";
 import { Footer } from "../footer/footer";
 
 export const siteTitle = "اعتبار من";
 export const pages = [
+  { path: "/contact", title: "رتبه اعتباری چیست؟" },
+  { path: "/contact", title: "راهنمای دریافت گزارش اعتباری" },
   { path: "/aboute", title: "درباره ما" },
-  { path: "/contact", title: "ارتباط با ما" },
-  { path: "/contact", title: "ارتباط با ما" },
-  { path: "/contact", title: "ارتباط با ما" },
-  { path: "/contact", title: "ارتباط با ما" },
+  { path: "/contact", title: "تماس با ما" },
 ];
 
 export default function Layout({ children, home }) {

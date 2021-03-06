@@ -89,6 +89,26 @@
   color: $white;
 }
 
+.lgButtonSecondry {
+  @include lgButton();
+  background: $secondry;
+  color: $white;
+}
+
+.lgButtonPrimaryOutline {
+  @include lgButton();
+  border: 1px solid $primary;
+  color: $primary;
+  background: $white;
+}
+
+.lgButtonSecondryOutline {
+  @include lgButton();
+  border: 1px solid $secondry;
+  color: $secondry;
+  background: $white;
+}
+
 .mdButtonPrimary {
   @include mdButton();
   background: $primary;
@@ -105,14 +125,14 @@
   @include mdButton();
   border: 1px solid $primary;
   color: $primary;
-  background: transparent;
+  background: $white;
 }
 
 .mdButtonSecondryOutline {
   @include mdButton();
   border: 1px solid $secondry;
   color: $secondry;
-  background: transparent;
+  background: $white;
 }
 
 .smButtonPrimary {
@@ -125,4 +145,16 @@
   color: gray;
   text-decoration: none;
   font-size: $mdFontSize;
+}
+
+.shadowPrimary {
+  box-shadow: 0 8px 20px 0 rgba(0, 90, 191, 0.3);
+}
+
+.shadowSecondry {
+  box-shadow: 0 8px 20px 0 rgba(0, 191, 175, 0.3);
+}
+
+.shadowNormal {
+  box-shadow: 0 12px 40px 0 rgba(0, 90, 191, 0.2);
 }
