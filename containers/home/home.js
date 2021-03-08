@@ -63,11 +63,152 @@ const Home = () => {
           <span>158</span>
         </div>
       </section>
-      <section className={style.homeSection}>
+      <section className={` ${style.homeSection3}`}>
         <div className={style.backgroundSection2}>
           <img className={style.bgSection3} src="/images/bg-section3.svg" />
+          <img className={style.cricle3} src="/images/circle3.svg" />
+          <img className={style.dots4} src="/images/dots4.svg" />
         </div>
-        test
+        <h2>راهنمای دریافت گزارش اعتباری</h2>
+        <span>
+          به راحتی و در کمترین زمان با سامانه اعتبار من رتبه اعتباری خود را
+          دریافت نمایید
+        </span>
+        <div className={style.plateContainer}>
+          <div>
+            <img src="/images/phone-nationalcode.svg" />
+            <b>ورود شماره همراه و شماره ملی</b>
+            <span>
+              ابتدا شماره تلفن و شماره همراه خود را وارد نمایید. توجه کنید که هر
+              دو باید به نام یک شخص باشد
+            </span>
+          </div>
+          <div>
+            <img src="/images/payment.svg" />
+            <b>پرداخت هزینه گزارش</b>
+            <span>
+              بعد از مشاهده تعرفه گزارش به صفحه درگاه پرداخت اینترنتی منتقل
+              خواهید شد تا هزینه گزارش را پرداخت نمایید
+            </span>
+          </div>
+          <div>
+            <img src="/images/verify.svg" />
+            <b>تایید هویت</b>
+            <span>
+              پس از بازگشت از صفحه درگاه پرداخت، سیستم هویت شما را تایید نموده و
+              آماده تحویل گزارش به شما خواهد شد
+            </span>
+          </div>
+          <div>
+            <img src="/images/report.svg" />
+            <b>مشاهده گزارش اعتباری</b>
+            <span>
+              در مرحله آخر سامانه گزارش اعتباری و رتبه شما را نمایش خواهد داد.
+              شما می‌توانید این گزارش را چاپ یا دریافت نمایید
+            </span>
+          </div>
+        </div>
+      </section>
+      <section className={` ${style.homeSection4}`}>
+        <div className={style.backgroundSection3}>
+          <img className={style.cricle4} src="/images/circle4.svg" />
+          <img className={style.dots5} src="/images/dots5.svg" />
+          <div className={style.bg}>
+            <img src="/images/pic_cta.png" />
+          </div>
+        </div>
+        <div className={style.textContainer}>
+          <div>
+            <h3>همین حالا گزارش اعتباری خود را دریافت کنید</h3>
+            <p>
+              بدون نیاز به مراجعه به بانک و تنها با چند کلیک، ظرف چند دقیقه در
+              سامانه اعتبار من گزارش اعتباری خود را دریافت و اقدام سنجش خود جهت
+              دریافت تسهیلات در بانک‌ها و موسسات اقتصادی نمایید
+            </p>
+          </div>
+          <div>
+            <button
+              className={`${utils.lgButtonPrimary} ${utils.shadowPrimary}`}
+            >
+              دریافت گزارش اعتباری
+            </button>
+          </div>
+        </div>
+      </section>
+      <section className={style.homeSection5}>
+        <h3>عوامل موثر بر رتبه‌بندی</h3>
+        <span>
+          اگر می‌خواهید رتبه اعتباری خود را افزایش دهید، باید بدانید چه عواملی
+          بر آن موثر است
+        </span>
+        <div className={style.charts}>
+          <div>
+            <div className={style.texts}>
+              <span className={style.title}>رفتار در بازپرداخت اقساط</span>
+              <span className={style.text}>
+                موثرترین عامل بر رتبه اعتباری، بازپرداخت به موقع اقساط است که
+                باعث افزایش امتیاز و رتبه اعتباری می‌شود.
+              </span>
+            </div>
+            <div className={style.chart}>
+              <span>49%</span>
+              <span className={style.chartColor}></span>
+            </div>
+          </div>
+          <div>
+            <div className={style.texts}>
+              <span className={style.title}>نوع تسهیلات</span>
+              <span className={style.text}>
+                هرچه تنوع تسهیلات دریافتی مشتری( قرض‌الحسنه، مشارکت مدنی،
+                ضمانت‌نامه و...) بیشتر باشد باعث افزایش امتیاز اعتباری وی خواهد
+                شد.
+              </span>
+            </div>
+            <div className={style.chart}>
+              <span>12%</span>
+              <span className={style.chartColor}></span>
+            </div>
+          </div>
+          <div>
+            <div className={style.texts}>
+              <span className={style.title}>توانایی مسجل شده در بازپرداخت</span>
+              <span className={style.text}>
+                مشتریانی که توانایی خود را در بازپرداخت به موقع اقساط تسهیلات
+                خود با مبالغ بیشتر نشان داده‌اند دارای امتیاز بالاتری هستند.
+              </span>
+            </div>
+            <div className={style.chart}>
+              <span>16%</span>
+              <span className={style.chartColor}></span>
+            </div>
+          </div>
+          <div>
+            <div className={style.texts}>
+              <span className={style.title}>بدهی جاری</span>
+              <span className={style.text}>
+                وجود بدهی جاری برای مشتریان منجر به کاهش امتیاز و رتبه اعتباری
+                می‌شود.
+              </span>
+            </div>
+            <div className={style.chart}>
+              <span>9%</span>
+              <span className={style.chartColor}></span>
+            </div>
+          </div>
+          <div>
+            <div className={style.texts}>
+              <span className={style.title}>سایر اطلاعات</span>
+              <span className={style.text}>
+                انواع وضعیت منفی ( مشتری و قرارداد)، تعداد درخواست های مشتری
+                برای تسهیلات، تعداد تسهیلاتی که وی ضامن آنها می‌باشد و سن مشتری
+              </span>
+            </div>
+            <div className={style.chart}>
+              <span>14%</span>
+              <span className={style.chartColor}></span>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   );

@@ -1,6 +1,7 @@
 $primary: #0078ff;
 $secondry: #169981;
 $white: #ffffff;
+$black: #222222;
 
 $xxsFontSize: 6pt;
 $xsFontSize: 8pt;
@@ -21,4 +22,8 @@ $xxlFontSize: 20pt;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+@mixin shadowNormal() {
+  box-shadow: 0 12px 40px 0 rgba(0, 90, 191, 0.2);
 }
