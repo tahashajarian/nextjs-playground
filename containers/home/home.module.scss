@@ -330,4 +330,22 @@
       left: 12%;
     }
   }
+  .backgroundSection4 {
+    position: absolute;
+    top: 2350px;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    img {
+      position: absolute;
+    }
+    .cricle6 {
+      right: 0;
+      top: 150px;
+    }
+    .cricle5 {
+      top: -40px;
+      left: 0;
+    }
+  }
 }
