@@ -1,14 +1,19 @@
 @import "../base.scss";
 
 .footerContainer {
+  height: 265px;
   width: 100%;
   position: relative;
   color: $white;
   background: rgb(2, 0, 36);
   background: linear-gradient(90deg, $primary 0%, $primary 35%, $secondry 100%);
+  @include flex();
+
   .footer {
     @include flex();
     > div {
+      @include flex-column();
+
       margin: 0 5%;
       > ul {
         list-style: none;
@@ -20,14 +25,38 @@
   }
   .legend {
     position: absolute;
-    width: 100px;
-    height: 100px;
-    background: $secondry;
-    left: calc(50% + 30px);
+    width: 120px;
+    height: 120px;
+    left: calc(50% - 60px);
     top: -50px;
     @include flex();
-    img {
-      transform: rotate(45deg);
+    border-radius: 50%;
+    padding: 25px;
+    box-shadow: 0 12px 30px 0 rgba(9, 29, 52, 0.4);
+    background: linear-gradient(222deg, #50d8bf 33%, #0078ff 100%);
+    .icon {
+      width: 80px;
+    }
+    .dotsRight {
+      position: absolute;
+      right: 128px;
+      top: 62px;
+    }
+    .dotsLeft {
+      position: absolute;
+      left: 128px;
+      top: 62px;
+    }
+  }
+  .copyRight {
+    width: 330px;
+    text-align: center;
+    @include flex-column();
+    span {
+      font-size: $smFontSize;
+      color: white;
+      margin-top: 30px;
+      direction: ltr;
     }
   }
 }
