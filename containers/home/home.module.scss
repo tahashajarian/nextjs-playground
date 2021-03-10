@@ -102,7 +102,10 @@
       // border: 1px solid red;
       @include flex();
       align-items: flex-start;
+      // flex-wrap: wrap;
+      width: 100%;
       > div {
+        width: 300px;
         @include shadowNormal();
         @include flex-column();
         margin: 3%;
@@ -236,6 +239,81 @@
       }
     }
   }
+  .homeSection6 {
+    padding: 50px;
+    @include flex-column();
+    margin-top: 50px;
+    h3 {
+      color: $primary;
+    }
+    > span {
+      font-size: $smFontSize;
+      color: gray;
+      width: 600px;
+      text-align: center;
+    }
+    > div {
+      padding-right: 50px;
+      @include flex-column();
+      align-items: flex-start;
+      span:first-child {
+        color: $primary;
+        margin-top: 50px;
+        position: relative;
+        img {
+          right: -22px;
+          top: 13px;
+          position: absolute;
+        }
+      }
+      span:nth-child(2) {
+        font-size: $smFontSize;
+        color: gray;
+        padding: 10px 30px;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        margin-top: 30px;
+      }
+      li {
+        margin: 15px 0;
+        font-size: $mdFontSize;
+        position: relative;
+        &::before {
+          content: "+";
+          position: absolute;
+          right: -20px;
+        }
+      }
+    }
+  }
+  .homeSection7 {
+    margin-bottom: 100px;
+    margin-top: 100px;
+    @include flex();
+    width: 90%;
+    .textContainer {
+      @include flex();
+      width: 100%;
+      padding-right: 50px;
+      // width: 65%;
+      > div {
+        margin: 0 20px;
+      }
+    }
+    h3 {
+      color: $secondry;
+    }
+    p {
+      // color: $white;
+      font-size: $smFontSize;
+    }
+    button {
+      white-space: nowrap;
+    }
+  }
   .backgroundSection1 {
     position: absolute;
     top: 0;
@@ -346,6 +424,44 @@
     .cricle5 {
       top: -40px;
       left: 0;
+    }
+  }
+  .backgroundSection6 {
+    position: absolute;
+    top: 2800px;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    img {
+      position: absolute;
+    }
+    .bg5 {
+      top: 0;
+      right: 0;
+      // width: 100%;
+    }
+    .cricle8 {
+      z-index: 2;
+      left: 0;
+      top: 300px;
+    }
+    .dots7 {
+      z-index: 2;
+      top: 230px;
+      right: 12%;
+    }
+  }
+  .backgroundSection7 {
+    position: absolute;
+    top: 3760px;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    img {
+      position: absolute;
+    }
+    .logo2 {
+      right: 5%;
     }
   }
 }

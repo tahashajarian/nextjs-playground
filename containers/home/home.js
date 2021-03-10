@@ -214,7 +214,12 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className={style.homeSection5}>
+      <section className={style.homeSection6}>
+        <div className={style.backgroundSection6}>
+          <img className={style.bg5} src="/images/bg5.svg" />
+          <img className={style.cricle8} src="/images/circle8.svg" />
+          <img className={style.dots7} src="/images/dots7.svg" />
+        </div>
         <h3>پرسش‌های متداول</h3>
         <span>
           بسیاری از کاربران ما سوالاتی مشابه سوالات شما دارند که می‌توانید با
@@ -223,6 +228,7 @@ const Home = () => {
         </span>
         <div>
           <span>
+            <img src="/images/dash.svg" />
             آیا سامانه اعتبار من، امکان چاپ و دانلود گزارش را می‌دهد ؟
           </span>
           <span>
@@ -240,6 +246,28 @@ const Home = () => {
             <li>نحوه محاسبه امتیازات به چه صورت است؟</li>
             <li>چند گزارش برای یک فرد وجود دارد؟</li>
           </ul>
+        </div>
+      </section>
+      <section className={` ${style.homeSection7}`}>
+        <div className={style.backgroundSection7}>
+          <img className={style.logo2} src="/images/logo-etebareman2.svg" />
+        </div>
+        <div className={style.textContainer}>
+          <div>
+            <h3>اولین قدم برای دریافت تسهیلات</h3>
+            <p>
+              پس از آشنایی با سامانه اعتبار من، اولین قدم برای دریافت تسهیلات
+              دریافت گزارش اعتباری و مشاهده رتبه و امتیاز اعتباریتان است. با
+              اینکار از هدر رفت وقت در بانک و موسسات جلوگیری می‌کنید
+            </p>
+          </div>
+          <div>
+            <button
+              className={`${utils.lgButtonPrimary} ${utils.shadowPrimary}`}
+            >
+              دریافت گزارش اعتباری
+            </button>
+          </div>
         </div>
       </section>
     </div>
