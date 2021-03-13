@@ -13,10 +13,23 @@
     @include flex();
     > div {
       @include flex-column();
-
-      margin: 0 5%;
+      width: 100%;
       > ul {
         list-style: none;
+        li {
+          margin-top: 10px;
+          font-size: $smFontSize;
+          @include flex();
+          justify-content: flex-start;
+          img {
+            margin-left: 15px;
+          }
+          > span {
+            > span:first-child {
+              margin-right: 15px;
+            }
+          }
+        }
       }
     }
   }

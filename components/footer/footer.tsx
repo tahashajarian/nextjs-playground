@@ -1,7 +1,6 @@
 import React from "react";
 import style from "./footer.module.scss";
-import Image from "next/image";
-
+import { pages } from "../layout/layout.tsx";
 interface Props {
   pages: any[];
 }
@@ -14,16 +13,22 @@ export const Footer = (props: Props) => {
           <ul>
             <span className={style.title}>تماس با ما</span>
             <li>
-              <span>icon</span>
-              <span className={"text"}>alkdjflaksdjfalsdfjsl;dfj</span>
+              <img src="/images/email.svg" />
+              <span className={"text"}>info@etebareman.ir</span>
             </li>
             <li>
-              <span>icon</span>
-              <span className={"text"}>alkdjflaksdjfalsdfjsl;dfj</span>
+              <img src="/images/phone.svg" />
+              <span className={"text"}>
+                <span>۰۹۲۱-۳۳۴۴۵۵۰</span>
+                <span>۰۲۱-۲۲۲۴۵۷۸۲</span>
+              </span>
             </li>
             <li>
-              <span>icon</span>
-              <span className={"text"}>alkdjflaksdjfalsdfjsl;dfj</span>
+              <img src="/images/phone.svg" />
+              <span className={"text"}>
+                تهران. میدان آرژانتین. گاندی ۱ . انتهای خیابان. شرکت رتبه بندی و
+                اعتبار سنجی اعتبار من
+              </span>
             </li>
           </ul>
         </div>
@@ -44,18 +49,12 @@ export const Footer = (props: Props) => {
         <div>
           <ul>
             <span className={style.title}>نقشه سایت</span>
-            <li>
-              <span>icon</span>
-              <span className={"text"}>alkdjflaksdjfalsdfjsl;dfj</span>
-            </li>
-            <li>
-              <span>icon</span>
-              <span className={"text"}>alkdjflaksdjfalsdfjsl;dfj</span>
-            </li>
-            <li>
-              <span>icon</span>
-              <span className={"text"}>alkdjflaksdjfalsdfjsl;dfj</span>
-            </li>
+            {pages.map((page) => (
+              <li>
+                <span></span>
+                <span className={"text"}>{page.title}</span>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
