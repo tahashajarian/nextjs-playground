@@ -8,6 +8,10 @@ interface Props {
 export const Footer = (props: Props) => {
   return (
     <footer className={style.footerContainer}>
+      <div className={style.backgroundContainer}>
+        <img className={style.circle8} src="/images/circle8.svg" />
+        <img className={style.circle9} src="/images/circle8.svg" />
+      </div>
       <div className={style.footer}>
         <div>
           <ul>
