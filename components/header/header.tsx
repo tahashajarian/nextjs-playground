@@ -9,15 +9,17 @@ interface Props {
 
 const Header = (props: Props) => (
   <header className={style.header}>
-    <span className={style.icon}>
-      <Image
-        src="/images/logo.svg" // Route of the image file
-        height={50} // Desired size with correct aspect ratio
-        width={50} // Desired size with correct aspect ratio
-        alt="Your Name"
-      />
-      <span>اعتبار من</span>
-    </span>
+    <Link href="/">
+      <span className={style.icon}>
+        <Image
+          src="/images/logo.svg" // Route of the image file
+          height={50} // Desired size with correct aspect ratio
+          width={50} // Desired size with correct aspect ratio
+          alt="Your Name"
+        />
+        <span>اعتبار من</span>
+      </span>
+    </Link>
     <ul className={style.menus}>
       {props.pages.map((page, index) => (
         <li key={index}>

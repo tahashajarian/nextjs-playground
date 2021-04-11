@@ -2,6 +2,8 @@ import React from "react";
 import Image from "next/image";
 import style from "./home.module.scss";
 import utils from "../../components/utils.module.scss";
+import Link from "next/link";
+import { routes } from "../../constants/routes";
 
 const Home = () => {
   return (
@@ -25,9 +27,13 @@ const Home = () => {
           اعتبار خود را در نزد آنها مشاهده نمایید.
         </p>
         <div className={style.actions}>
-          <button className={`${utils.lgButtonPrimary} ${utils.shadowPrimary}`}>
-            دریافت گزارش اعتباری
-          </button>
+          <Link href={routes.inquiry}>
+            <button
+              className={`${utils.lgButtonPrimary} ${utils.shadowPrimary}`}
+            >
+              دریافت گزارش اعتباری
+            </button>
+          </Link>
           <button className={utils.lgButtonSecondryOutline}>
             رتبه اعتباری چیست؟
           </button>
@@ -127,11 +133,13 @@ const Home = () => {
             </p>
           </div>
           <div>
-            <button
-              className={`${utils.lgButtonPrimary} ${utils.shadowPrimary}`}
-            >
-              دریافت گزارش اعتباری
-            </button>
+            <Link href={routes.inquiry}>
+              <button
+                className={`${utils.lgButtonPrimary} ${utils.shadowPrimary}`}
+              >
+                دریافت گزارش اعتباری
+              </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -262,11 +270,13 @@ const Home = () => {
             </p>
           </div>
           <div>
-            <button
-              className={`${utils.lgButtonPrimary} ${utils.shadowPrimary}`}
-            >
-              دریافت گزارش اعتباری
-            </button>
+            <Link href={routes.inquiry}>
+              <button
+                className={`${utils.lgButtonPrimary} ${utils.shadowPrimary}`}
+              >
+                دریافت گزارش اعتباری
+              </button>
+            </Link>
           </div>
         </div>
       </section>

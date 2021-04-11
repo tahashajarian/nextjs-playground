@@ -1,0 +1,10 @@
+@import "../../components/base.scss";
+
+.inquiryContainer {
+  @include flex-column();
+  min-height: calc(100vh - 369px);
+  .title {
+    @include flex-column();
+    color: $primary;
+  }
+}
