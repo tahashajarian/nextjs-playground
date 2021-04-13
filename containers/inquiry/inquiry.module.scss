@@ -2,6 +2,7 @@
 
 .inquiryContainer {
   @include flex-column();
+  justify-content: flex-start;
   min-height: calc(100vh - 369px);
   .title {
     @include flex-column();

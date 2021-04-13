@@ -53,8 +53,8 @@ export const Footer = (props: Props) => {
         <div>
           <ul>
             <span className={style.title}>نقشه سایت</span>
-            {pages.map((page) => (
-              <li>
+            {pages.map((page, index) => (
+              <li key={index}>
                 <span></span>
                 <span className={"text"}>{page.title}</span>
               </li>
