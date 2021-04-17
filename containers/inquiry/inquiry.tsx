@@ -36,6 +36,10 @@ const Inquiry = () => {
         <span>شماره تلفن همراه</span>
         <input placeholder="مثلا: 0912xxxxxxx" />
       </div>
+      <div className={style.input}>
+        <span>شماره تلفن همراه مدیر عامل</span>
+        <input placeholder="مثلا: 0912xxxxxxx" />
+      </div>
       <div className={style.agreement}>
         <input type="checkbox" />
         <span>

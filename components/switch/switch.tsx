@@ -21,7 +21,8 @@ const Switch = (props: Props) => {
             key={index}
             onClick={() => props.onchange(option.value)}
           >
-            {option.title}
+            {""}
+            {option.title}{" "}
           </span>
         ))}
       </div>
