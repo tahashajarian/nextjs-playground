@@ -8,4 +8,7 @@
     @include flex-column();
     color: $primary;
   }
+  .input {
+    margin: 15px 0;
+  }
 }

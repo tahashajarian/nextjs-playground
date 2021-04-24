@@ -3,6 +3,7 @@ import Switch from "../../components/switch/switch";
 import { routes } from "../../constants/routes";
 import style from "./inquiry.module.scss";
 import utils from "../../components/utils.module.scss";
+import Input from "../../components/input/input";
 
 const Inquiry = () => {
   const [reportType, setReportType] = useState<"haghighi" | "hoghoughi">(
@@ -29,16 +30,37 @@ const Inquiry = () => {
         onchange={handleChnageReportType}
       />
       <div className={style.input}>
-        <span>شماره ملی</span>
-        <input placeholder="شماره ملی بدون خط تیره وارد نمایید" />
+        <Input
+          label={reportType === "haghighi" ? "شماره ملی" : "شناسه ملی شرکت"}
+          onChange={() => {}}
+          placeholder={"شماره ملی بدون خط تیره وارد نمایید"}
+          value={""}
+          width={"400px"}
+        />
       </div>
+      {reportType === "hoghoughi" && (
+        <div className={style.input}>
+          <Input
+            label={"شماره ملی مدیر عامل"}
+            onChange={() => {}}
+            placeholder="شماره ملی بدون خط تیره وارد نمایید"
+            value={""}
+            width={"400px"}
+          />
+        </div>
+      )}
       <div className={style.input}>
-        <span>شماره تلفن همراه</span>
-        <input placeholder="مثلا: 0912xxxxxxx" />
-      </div>
-      <div className={style.input}>
-        <span>شماره تلفن همراه مدیر عامل</span>
-        <input placeholder="مثلا: 0912xxxxxxx" />
+        <Input
+          label={
+            reportType === "haghighi"
+              ? "شماره تلفن همراه"
+              : " شماره تلفن همراه مدیر عامل"
+          }
+          onChange={() => {}}
+          placeholder="مثلا: 0912xxxxxxx"
+          value={""}
+          width={"400px"}
+        />
       </div>
       <div className={style.agreement}>
         <input type="checkbox" />
