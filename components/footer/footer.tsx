@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./footer.module.scss";
-import { pages } from "../layout/layout.tsx";
+import { pages } from "../layout/layout";
 interface Props {
   pages: any[];
 }
