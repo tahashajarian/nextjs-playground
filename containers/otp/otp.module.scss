@@ -1,0 +1,15 @@
+@import "../../components/base.scss";
+
+.container {
+  min-height: calc(100vh - 369px);
+  text-align: center;
+  padding-top: 50px;
+  .payment {
+    .success {
+      color: $secondry;
+    }
+    .fail {
+      color: $failcolor;
+    }
+  }
+}
