@@ -4,12 +4,22 @@
   min-height: calc(100vh - 369px);
   text-align: center;
   padding-top: 50px;
+  @include flex-column();
+  justify-content: flex-start;
   .payment {
     .success {
       color: $secondry;
     }
     .fail {
       color: $failcolor;
+    }
+    p {
+      text-align: justify;
+      max-width: 400px;
+      margin: auto;
+    }
+    b {
+      margin: 5px;
     }
   }
 }

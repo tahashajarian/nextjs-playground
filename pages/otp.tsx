@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Layout from "../components/layout/layout";
-import Otp from "../containers/otp/otp";
+import Otp from "../containers/otp/otp-component";
 
 export default function InquiryContainer(props) {
   return (

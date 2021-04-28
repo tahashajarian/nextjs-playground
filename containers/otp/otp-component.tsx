@@ -4,9 +4,7 @@ import { useRouter } from "next/router";
 import Input from "../../components/input/input";
 import utils from "../../components/utils.module.scss";
 
-interface Props {}
-
-const Otp = (props: Props) => {
+const Otp = ({ post }) => {
   const route = useRouter();
   const url = new URL("http://example" + route.asPath);
   const status = url.searchParams.get("status");
@@ -22,12 +20,15 @@ const Otp = (props: Props) => {
         ) : (
           <span className={style.fail}>پرداخت انجام نشد</span>
         )}
-        <div>
-          گزارش اعتباری برای شماره ملی {nationalCode} و شماره همراه{" "}
-          {phoneNumber} آماده دریافت است لطفا کد یکبار مصرف که به شماره همراه
-          ثبت شده ارسال شده در کادر زیر وارد نمایید سپس دمه دانلود گزارش اعتباری
+        <p>
+          گزارش اعتباری برای شماره ملی
+          <b> {nationalCode} </b>و شماره همراه
+          <b> {phoneNumber} </b>
+          آماده دریافت است لطفا کد یکبار مصرف که به شماره همراه ثبت شده ارسال
+          شده در کادر زیر وارد نمایید سپس دکمه
+          <b> دانلود گزارش اعتباری </b>
           را بزنید
-        </div>
+        </p>
       </div>
       <div>
         <Input
