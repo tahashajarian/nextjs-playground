@@ -8,6 +8,10 @@ interface Props {
 export const Footer = (props: Props) => {
   return (
     <footer className={style.footerContainer}>
+      <div className={style.backgroundContainer}>
+        <img className={style.circle8} src="/images/circle8.svg" />
+        <img className={style.circle9} src="/images/circle8.svg" />
+      </div>
       <div className={style.footer}>
         <div>
           <ul>
@@ -49,8 +53,8 @@ export const Footer = (props: Props) => {
         <div>
           <ul>
             <span className={style.title}>نقشه سایت</span>
-            {pages.map((page) => (
-              <li>
+            {pages.map((page, index) => (
+              <li key={index}>
                 <span></span>
                 <span className={"text"}>{page.title}</span>
               </li>
