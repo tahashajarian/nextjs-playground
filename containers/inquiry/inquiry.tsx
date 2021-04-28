@@ -60,16 +60,21 @@ const Inquiry = () => {
           placeholder="مثلا: 0912xxxxxxx"
           value={""}
           width={"400px"}
+          helperText={
+            "دقت کنید شماره تلفن همراه باید متعلق به شماره ملی مندرج باشد."
+          }
         />
       </div>
       <div className={style.agreement}>
         <input type="checkbox" />
+        <span></span>
         <span>
           <a href={routes.rules}>قوانین اعتبار من</a>
+          &nbsp;
           <span>را مطالعه نموده و می‌پذیرم</span>
         </span>
       </div>
-      <div>
+      <div className={style.submit}>
         <button className={`${utils.lgButtonPrimary} ${utils.shadowPrimary}`}>
           تایید و مشاهده هزینه گزارش
         </button>

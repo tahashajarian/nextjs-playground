@@ -7,6 +7,7 @@ interface Props {
   onChange: ChangeEventHandler;
   label: string;
   width: string;
+  helperText?: string;
 }
 
 const Input = (props: Props) => {
@@ -19,6 +20,12 @@ const Input = (props: Props) => {
         onChange={props.onChange}
         placeholder={props.placeholder}
       />
+      {props.helperText && (
+        <div className={style.helperText}>
+          <img src="/images/information.svg" />
+          <span>{props.helperText}</span>
+        </div>
+      )}
     </div>
   );
 };
