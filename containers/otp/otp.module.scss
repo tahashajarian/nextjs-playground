@@ -3,10 +3,11 @@
 .container {
   min-height: calc(100vh - 369px);
   text-align: center;
-  padding-top: 50px;
+  padding: 50px 0;
   @include flex-column();
   justify-content: flex-start;
   .payment {
+    margin: 50px;
     .success {
       color: $secondry;
     }
@@ -16,10 +17,26 @@
     p {
       text-align: justify;
       max-width: 400px;
-      margin: auto;
+      margin: 20px auto;
     }
     b {
       margin: 5px;
+    }
+  }
+  .submit {
+    margin: 50px;
+  }
+  .timer {
+    padding: 30px;
+    color: gray;
+    font-size: $smFontSize;
+    .resend {
+      color: $primary;
+      padding: 0 10px;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }
