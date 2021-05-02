@@ -6,7 +6,7 @@ import utils from "../../components/utils.module.scss";
 import Link from "next/link";
 import { routes } from "../../constants/routes";
 
-const Otp = ({ post }) => {
+const Otp = () => {
   const timeWait = 120;
   const [timer, setTimer] = useState(timeWait);
   const [status, setStatus] = useState<any>();
