@@ -12,9 +12,21 @@ const Inquiry = () => {
   const handleChnageReportType = (reportType) => {
     setReportType(reportType);
   };
-  useEffect(() => {
-    console.log("report type changed => ", reportType);
-  }, [reportType]);
+
+  const [companyNationalCode, setCompanyNationalCode] = useState();
+  const [nationalCode, setNationalCode] = useState();
+  const [mobileNumber, setMobileNumber] = useState();
+
+  const [companyNationalCodeError, setCompanyNationalCodeError] = useState(
+    false
+  );
+  const [nationalCodeError, setNationalCodeError] = useState(false);
+  const [mobileNumberError, setMobileNumberError] = useState(false);
+
+  const handleChangeNationalCode = (e) => {
+    setNationalCode(e.target.value);
+  };
+
   return (
     <div className={style.inquiryContainer}>
       <div className={style.title}>
@@ -32,9 +44,9 @@ const Inquiry = () => {
       <div className={style.input}>
         <Input
           label={reportType === "haghighi" ? "شماره ملی" : "شناسه ملی شرکت"}
-          onChange={() => {}}
+          onChange={handleChangeNationalCode}
           placeholder={"شماره ملی بدون خط تیره وارد نمایید"}
-          value={""}
+          value={nationalCode}
           width={"400px"}
         />
       </div>

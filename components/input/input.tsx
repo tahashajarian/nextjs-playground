@@ -3,11 +3,13 @@ import style from "./input.module.scss";
 
 interface Props {
   placeholder: string;
-  value: any;
-  onChange: ChangeEventHandler;
+  value?: any;
+  onChange?: ChangeEventHandler;
   label: string;
   width: string;
   helperText?: string;
+  name?: string;
+  error?: boolean;
 }
 
 const Input = (props: Props) => {
@@ -19,6 +21,7 @@ const Input = (props: Props) => {
         value={props.value}
         onChange={props.onChange}
         placeholder={props.placeholder}
+        name={props.name}
       />
       {props.helperText && (
         <div className={style.helperText}>
