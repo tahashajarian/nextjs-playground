@@ -10,6 +10,7 @@ interface Props {
   helperText?: string;
   name?: string;
   error?: boolean;
+  errorText?: string;
 }
 
 const Input = (props: Props) => {
@@ -23,6 +24,12 @@ const Input = (props: Props) => {
         placeholder={props.placeholder}
         name={props.name}
       />
+      {props.error && (
+        <div className={style.errorText}>
+          <img src="/images/information.svg" />
+          <span>{props.errorText}</span>
+        </div>
+      )}
       {props.helperText && (
         <div className={style.helperText}>
           <img src="/images/information.svg" />

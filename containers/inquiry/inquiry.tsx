@@ -22,13 +22,36 @@ const Inquiry = () => {
   );
   const [nationalCodeError, setNationalCodeError] = useState(false);
   const [mobileNumberError, setMobileNumberError] = useState(false);
+  const [
+    companyNationalCodeErrorText,
+    setCompanyNationalCodeErrorText,
+  ] = useState("");
+  const [nationalCodeErrorText, setNationalCodeErrorText] = useState("");
+  const [mobileNumberErrorText, setMobileNumberErrorText] = useState("");
 
   const handleChangeNationalCode = (e) => {
     setNationalCode(e.target.value);
+    setNationalCodeError(false);
+  };
+
+  const handleChangeCompanyNationCode = (e) => {
+    setCompanyNationalCode(e.target.value);
+    setCompanyNationalCodeError(false);
+  };
+
+  const handleChangeMobileNumber = (e) => {
+    setMobileNumber(e.target.value);
+    setMobileNumberError(false);
+  };
+
+  const submitForm = (e) => {
+    setMobileNumberErrorText("با این شماره وارد کردنت این چه مشاره ایه آخه...");
+    setMobileNumberError(true);
+    e.preventDefault();
   };
 
   return (
-    <div className={style.inquiryContainer}>
+    <form className={style.inquiryContainer} onSubmit={submitForm}>
       <div className={style.title}>
         <h2>دریافت گزارش اعتباری</h2>
       </div>
@@ -48,16 +71,20 @@ const Inquiry = () => {
           placeholder={"شماره ملی بدون خط تیره وارد نمایید"}
           value={nationalCode}
           width={"400px"}
+          error={nationalCodeError}
+          errorText={nationalCodeErrorText}
         />
       </div>
       {reportType === "hoghoughi" && (
         <div className={style.input}>
           <Input
             label={"شماره ملی مدیر عامل"}
-            onChange={() => {}}
+            onChange={handleChangeCompanyNationCode}
             placeholder="شماره ملی بدون خط تیره وارد نمایید"
-            value={""}
+            value={companyNationalCode}
             width={"400px"}
+            error={companyNationalCodeError}
+            errorText={companyNationalCodeErrorText}
           />
         </div>
       )}
@@ -68,13 +95,15 @@ const Inquiry = () => {
               ? "شماره تلفن همراه"
               : " شماره تلفن همراه مدیر عامل"
           }
-          onChange={() => {}}
+          onChange={handleChangeMobileNumber}
           placeholder="مثلا: 0912xxxxxxx"
-          value={""}
+          value={mobileNumber}
           width={"400px"}
+          error={mobileNumberError}
           helperText={
             "دقت کنید شماره تلفن همراه باید متعلق به شماره ملی مندرج باشد."
           }
+          errorText={mobileNumberErrorText}
         />
       </div>
       <div className={style.agreement}>
@@ -87,11 +116,14 @@ const Inquiry = () => {
         </span>
       </div>
       <div className={style.submit}>
-        <button className={`${utils.lgButtonPrimary} ${utils.shadowPrimary}`}>
+        <button
+          className={`${utils.lgButtonPrimary} ${utils.shadowPrimary}`}
+          type="submit"
+        >
           تایید و مشاهده هزینه گزارش
         </button>
       </div>
-    </div>
+    </form>
   );
 };
 
