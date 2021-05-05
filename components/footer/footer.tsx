@@ -14,6 +14,7 @@ export const Footer = (props: Props) => {
       </div>
       <div className={style.footer}>
         <div>
+          {/*
           <ul>
             <span className={style.title}>تماس با ما</span>
             <li>
@@ -24,17 +25,18 @@ export const Footer = (props: Props) => {
               <img src="/images/phone.svg" />
               <span className={"text"}>
                 <span>۰۹۲۱-۳۳۴۴۵۵۰</span>
-                <span>۰۲۱-۲۲۲۴۵۷۸۲</span>
+                <span>۰۲۱-۲۲۲۴۵۷۸۲</span> 
               </span>
             </li>
             <li>
               <img src="/images/phone.svg" />
               <span className={"text"}>
-                تهران. میدان آرژانتین. گاندی ۱ . انتهای خیابان. شرکت رتبه بندی و
-                اعتبار سنجی اعتبار من
+                 تهران. میدان آرژانتین. گاندی ۱ . انتهای خیابان. شرکت رتبه بندی و
+                اعتبار سنجی اعتبار من 
               </span>
             </li>
           </ul>
+        */}
         </div>
         <div>
           <legend className={style.legend}>
@@ -51,7 +53,7 @@ export const Footer = (props: Props) => {
           </div>
         </div>
         <div>
-          <ul>
+          {/* <ul>
             <span className={style.title}>نقشه سایت</span>
             {pages.map((page, index) => (
               <li key={index}>
@@ -59,7 +61,7 @@ export const Footer = (props: Props) => {
                 <span className={"text"}>{page.title}</span>
               </li>
             ))}
-          </ul>
+          </ul> */}
         </div>
       </div>
     </footer>
