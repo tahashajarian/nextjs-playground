@@ -4,7 +4,11 @@ import { routes } from "../../constants/routes";
 import style from "./inquiry.module.scss";
 import utils from "../../components/utils.module.scss";
 import Input from "../../components/input/input";
-
+import Button from "../../components/button/button";
+import { checkMelliCode, checkMobile } from "../../utils/validate";
+import axiosInstance from "../../utils/axiosInstance";
+import { apies } from "../../constants/api";
+import Spinner from "../../components/spinner/spinner";
 const Inquiry = () => {
   const [reportType, setReportType] = useState<"haghighi" | "hoghoughi">(
     "haghighi"
@@ -13,45 +17,98 @@ const Inquiry = () => {
     setReportType(reportType);
   };
 
-  const [companyNationalCode, setCompanyNationalCode] = useState();
-  const [nationalCode, setNationalCode] = useState();
-  const [mobileNumber, setMobileNumber] = useState();
+  const [companyNationalCode, setCompanyNationalCode] = useState("");
+  const [nationalCode, setNationalCode] = useState("");
+  const [mobileNumber, setMobileNumber] = useState("");
 
   const [companyNationalCodeError, setCompanyNationalCodeError] = useState(
     false
   );
   const [nationalCodeError, setNationalCodeError] = useState(false);
   const [mobileNumberError, setMobileNumberError] = useState(false);
-  const [
-    companyNationalCodeErrorText,
-    setCompanyNationalCodeErrorText,
-  ] = useState("");
-  const [nationalCodeErrorText, setNationalCodeErrorText] = useState("");
-  const [mobileNumberErrorText, setMobileNumberErrorText] = useState("");
+
+  const [disableSubmit, setDisableSubmit] = useState<boolean>(true);
+  const [loading, setLoading] = useState(false);
+
+  const [acceptedRules, setAcceptedRules] = useState(false);
+  const [acceptedRulesError, setAcceptedRulesError] = useState(false);
+
+  useEffect(() => {
+    console.log("disabled submit => ", disableSubmit);
+  }, [disableSubmit]);
+
+  useEffect(() => {
+    if (reportType === "haghighi") {
+      if (nationalCode && mobileNumber) setDisableSubmit(false);
+      else setDisableSubmit(true);
+    } else {
+      if (nationalCode && mobileNumber && companyNationalCode)
+        setDisableSubmit(false);
+      else setDisableSubmit(true);
+    }
+  }, [companyNationalCode, nationalCode, mobileNumber]);
 
   const handleChangeNationalCode = (e) => {
-    setNationalCode(e.target.value);
+    const value = e.target.value;
+    setNationalCode(value);
     setNationalCodeError(false);
   };
 
   const handleChangeCompanyNationCode = (e) => {
-    setCompanyNationalCode(e.target.value);
+    const value = e.target.value;
+    setCompanyNationalCode(value);
     setCompanyNationalCodeError(false);
   };
 
   const handleChangeMobileNumber = (e) => {
-    setMobileNumber(e.target.value);
+    const value = e.target.value;
+    setMobileNumber(value);
     setMobileNumberError(false);
   };
 
   const submitForm = (e) => {
-    setMobileNumberErrorText("با این شماره وارد کردنت این چه مشاره ایه آخه...");
-    setMobileNumberError(true);
     e.preventDefault();
+    let hasError: boolean = false;
+    if (!acceptedRules) {
+      setAcceptedRulesError(true);
+      hasError = true;
+    }
+    if (reportType === "haghighi") {
+      if (!checkMelliCode(nationalCode)) {
+        setNationalCodeError(true);
+        hasError = true;
+      }
+      if (!checkMobile(mobileNumber)) {
+        setMobileNumberError(true);
+        hasError = true;
+      }
+      if (!hasError) {
+        setLoading(true);
+        axiosInstance
+          .post(apies.inquiryPersonal, {
+            mobileNumber,
+            nationalCode,
+          })
+          .then((respnse) => {
+            setLoading(false);
+          })
+          .catch((error) => {
+            setLoading(false);
+          });
+      }
+    } else {
+    }
+  };
+
+  const onchangeAcceptedRuls = (e) => {
+    const value = e.target.checked;
+    setAcceptedRules(value);
+    setAcceptedRulesError(false);
   };
 
   return (
     <form className={style.inquiryContainer} onSubmit={submitForm}>
+      <Spinner show={loading} />
       <div className={style.title}>
         <h2>دریافت گزارش اعتباری</h2>
       </div>
@@ -72,7 +129,10 @@ const Inquiry = () => {
           value={nationalCode}
           width={"400px"}
           error={nationalCodeError}
-          errorText={nationalCodeErrorText}
+          errorText={`${
+            reportType === "haghighi" ? "شماره ملی" : "شناسه ملی شرکت"
+          } اشتباه است`}
+          type="number"
         />
       </div>
       {reportType === "hoghoughi" && (
@@ -84,7 +144,8 @@ const Inquiry = () => {
             value={companyNationalCode}
             width={"400px"}
             error={companyNationalCodeError}
-            errorText={companyNationalCodeErrorText}
+            errorText={"شماره ملی اشتباه است"}
+            type="number"
           />
         </div>
       )}
@@ -103,25 +164,35 @@ const Inquiry = () => {
           helperText={
             "دقت کنید شماره تلفن همراه باید متعلق به شماره ملی مندرج باشد."
           }
-          errorText={mobileNumberErrorText}
+          errorText={"شماره تلفن همراه اشتباه است"}
+          type="number"
         />
       </div>
       <div className={style.agreement}>
-        <input type="checkbox" />
+        <input
+          type="checkbox"
+          checked={acceptedRules}
+          onChange={onchangeAcceptedRuls}
+        />
         <span></span>
         <span>
           <a href={routes.rules}>قوانین اعتبار من</a>
           &nbsp;
           <span>را مطالعه نموده و می‌پذیرم</span>
         </span>
+        {acceptedRulesError && (
+          <div className={style.errorText}>
+            <img src="/images/information-error.svg" />
+            <span>انتخاب این فیلد الزامی است</span>
+          </div>
+        )}
       </div>
       <div className={style.submit}>
-        <button
-          className={`${utils.lgButtonPrimary} ${utils.shadowPrimary}`}
-          type="submit"
-        >
-          تایید و مشاهده هزینه گزارش
-        </button>
+        <Button
+          label="تایید و مشاهده هزینه گزارش"
+          disabled={disableSubmit}
+          className={`lgButtonPrimary`}
+        />
       </div>
     </form>
   );

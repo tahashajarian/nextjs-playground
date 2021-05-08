@@ -11,6 +11,7 @@ interface Props {
   name?: string;
   error?: boolean;
   errorText?: string;
+  type: "number" | "text";
 }
 
 const Input = (props: Props) => {
@@ -18,15 +19,16 @@ const Input = (props: Props) => {
     <div className={style.inputWrapper} style={{ width: props.width }}>
       <label className={style.label}>{props.label}</label>
       <input
-        className={style.input}
+        className={`${style.input} ${props.error ? style.error : ""}`}
         value={props.value}
         onChange={props.onChange}
         placeholder={props.placeholder}
         name={props.name}
+        type={props.type}
       />
       {props.error && (
         <div className={style.errorText}>
-          <img src="/images/information.svg" />
+          <img src="/images/information-error.svg" />
           <span>{props.errorText}</span>
         </div>
       )}

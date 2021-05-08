@@ -1,47 +1,41 @@
-@font-face {
-  font-family: "IranSans";
-  src: url("./fonts/iransans/IRANSansWeb\(FaNum\)_Medium.ttf");
+@import "../../components/base.scss";
+
+.loaderContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vw;
+  display: flex;
+  justify-content: center;
+  background: #00000056;
+  padding-top: 30%;
+  z-index: 1000;
+  //   background-
 }
 
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: "IranSans";
-  line-height: 1.6;
-  font-size: 18px;
-  direction: rtl;
-  overflow-x: hidden;
-}
-
-* {
-  box-sizing: border-box;
-  font-family: "IranSans";
-}
-
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Firefox */
-input[type="number"] {
-  -moz-appearance: textfield;
+.blured {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vw;
+  filter: blur(10px);
+  z-index: 1;
 }
 
 .loader,
 .loader:before,
 .loader:after {
-  background: #ffffff;
+  background: $primary;
   -webkit-animation: load1 1s infinite ease-in-out;
   animation: load1 1s infinite ease-in-out;
   width: 1em;
   height: 4em;
+  z-index: 2;
 }
 .loader {
-  color: #ffffff;
+  color: $primary;
   text-indent: -9999em;
   margin: 88px auto;
   position: relative;

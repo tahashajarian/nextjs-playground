@@ -1,4 +1,4 @@
-export const api = {
+export const apies = {
   inquiryPersonal: "/Inquiry/Personal",
   inquiryLegal: "/Inquiry/Legal",
 };

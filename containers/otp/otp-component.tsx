@@ -63,6 +63,7 @@ const Otp = () => {
               placeholder={"کد یک بار مصرف را وارد کنید"}
               value={""}
               width={"400px"}
+              type="number"
             />
           </div>
           <div className={style.timer}>

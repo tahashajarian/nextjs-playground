@@ -36,3 +36,14 @@
     }
   }
 }
+
+.errorText {
+  font-size: 9pt;
+  color: $failcolor;
+  display: flex;
+  margin-top: 8px;
+  img {
+    width: 20px;
+    margin-left: 5px;
+  }
+}
