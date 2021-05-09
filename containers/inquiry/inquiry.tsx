@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Switch from "../../components/switch/switch";
-import { routes } from "../../constants/routes";
+import { staticRoutes } from "../../constants/routes";
 import style from "./inquiry.module.scss";
 import utils from "../../components/utils.module.scss";
 import Input from "../../components/input/input";
@@ -9,6 +9,12 @@ import { checkMelliCode, checkMobile } from "../../utils/validate";
 import axiosInstance from "../../utils/axiosInstance";
 import { apies } from "../../constants/api";
 import Spinner from "../../components/spinner/spinner";
+import {
+  useAppContextUpdate,
+  useAppContext,
+  StateInterface,
+} from "../../context/state";
+import { useRouter } from "next/router";
 const Inquiry = () => {
   const [reportType, setReportType] = useState<"haghighi" | "hoghoughi">(
     "haghighi"
@@ -17,9 +23,13 @@ const Inquiry = () => {
     setReportType(reportType);
   };
 
-  const [companyNationalCode, setCompanyNationalCode] = useState("");
-  const [nationalCode, setNationalCode] = useState("");
-  const [mobileNumber, setMobileNumber] = useState("");
+  const state: StateInterface = useAppContext();
+
+  const [companyNationalCode, setCompanyNationalCode] = useState(
+    state.companyNationalCode
+  );
+  const [nationalCode, setNationalCode] = useState(state.nationalCode);
+  const [mobileNumber, setMobileNumber] = useState(state.mobileNumber);
 
   const [companyNationalCodeError, setCompanyNationalCodeError] = useState(
     false
@@ -37,6 +47,9 @@ const Inquiry = () => {
     console.log("disabled submit => ", disableSubmit);
   }, [disableSubmit]);
 
+  const x = useAppContext();
+  console.log("contxt => ", x);
+
   useEffect(() => {
     if (reportType === "haghighi") {
       if (nationalCode && mobileNumber) setDisableSubmit(false);
@@ -46,12 +59,19 @@ const Inquiry = () => {
         setDisableSubmit(false);
       else setDisableSubmit(true);
     }
-  }, [companyNationalCode, nationalCode, mobileNumber]);
+  }, [companyNationalCode, nationalCode, mobileNumber, reportType]);
 
   const handleChangeNationalCode = (e) => {
     const value = e.target.value;
     setNationalCode(value);
     setNationalCodeError(false);
+  };
+
+  const updateState = useAppContextUpdate();
+
+  const route = useRouter();
+  const redircetToPrePaymentPage = () => {
+    route.push(staticRoutes["pre-payment"]);
   };
 
   const handleChangeCompanyNationCode = (e) => {
@@ -85,18 +105,64 @@ const Inquiry = () => {
       if (!hasError) {
         setLoading(true);
         axiosInstance
-          .post(apies.inquiryPersonal, {
+          .post(apies.paymentRequest, {
             mobileNumber,
             nationalCode,
           })
-          .then((respnse) => {
+          .then((response) => {
             setLoading(false);
+            if (response.data && response.data.statusCode === 200) {
+              updateState({
+                mobileNumber,
+                nationalCode,
+                reportType,
+                trackId: response.data.data,
+              });
+              redircetToPrePaymentPage();
+            }
           })
           .catch((error) => {
             setLoading(false);
           });
       }
     } else {
+      if (!checkMelliCode(nationalCode)) {
+        setNationalCodeError(true);
+        hasError = true;
+      }
+      if (!checkMelliCode(companyNationalCode)) {
+        setCompanyNationalCodeError(true);
+        hasError = true;
+      }
+      if (!checkMobile(mobileNumber)) {
+        setMobileNumberError(true);
+        hasError = true;
+      }
+      if (!hasError) {
+        setLoading(true);
+        axiosInstance
+          .post(apies.paymentRequest, {
+            mobileNumber,
+            nationalCode,
+            companyNationalCode,
+          })
+          .then((response) => {
+            setLoading(false);
+            if (response.data && response.data.statusCode === 200) {
+              updateState({
+                mobileNumber,
+                nationalCode,
+                reportType,
+                companyNationalCode,
+                trackId: response.data.data,
+              });
+              redircetToPrePaymentPage();
+            }
+          })
+          .catch((error) => {
+            setLoading(false);
+          });
+      }
     }
   };
 
@@ -176,7 +242,7 @@ const Inquiry = () => {
         />
         <span></span>
         <span>
-          <a href={routes.rules}>قوانین اعتبار من</a>
+          <a href={staticRoutes.rules}>قوانین اعتبار من</a>
           &nbsp;
           <span>را مطالعه نموده و می‌پذیرم</span>
         </span>

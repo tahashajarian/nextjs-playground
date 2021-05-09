@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import Input from "../../components/input/input";
 import utils from "../../components/utils.module.scss";
 import Link from "next/link";
-import { routes } from "../../constants/routes";
+import { staticRoutes } from "../../constants/routes";
 
 const Otp = () => {
   const timeWait = 120;
@@ -89,7 +89,7 @@ const Otp = () => {
           </div>
         </div>
       ) : (
-        <Link href={routes.home}>
+        <Link href={staticRoutes.home}>
           <button className={`${utils.lgButtonPrimary} ${utils.shadowPrimary}`}>
             بازگشت به صفحه اصلی{" "}
           </button>

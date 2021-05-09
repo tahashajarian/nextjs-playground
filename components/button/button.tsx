@@ -4,8 +4,17 @@ import utils from "../utils.module.scss";
 
 interface Props {
   label: string;
-  disabled: boolean;
-  className: string;
+  disabled?: boolean;
+  className:
+    | "lgButtonPrimary"
+    | "lgButtonSecondry"
+    | "lgButtonPrimaryOutline"
+    | "lgButtonSecondryOutline"
+    | "mdButtonPrimary"
+    | "mdButtonSecondry"
+    | "mdButtonPrimaryOutline"
+    | "mdButtonSecondryOutline"
+    | "smButtonPrimary";
 }
 
 const Button = (props: Props) => (

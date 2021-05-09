@@ -20,7 +20,7 @@ const Input = (props: Props) => {
       <label className={style.label}>{props.label}</label>
       <input
         className={`${style.input} ${props.error ? style.error : ""}`}
-        value={props.value}
+        value={props.value ? props.value : ""}
         onChange={props.onChange}
         placeholder={props.placeholder}
         name={props.name}

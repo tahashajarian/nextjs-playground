@@ -8,6 +8,7 @@
   .title {
     @include flex-column();
     color: $primary;
+    margin-bottom: 30px;
   }
   .input {
     margin: 15px 0;

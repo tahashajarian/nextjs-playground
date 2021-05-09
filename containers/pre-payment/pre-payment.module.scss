@@ -1,0 +1,113 @@
+@import "../../components/base.scss";
+
+.prePaymentContainer {
+  @include flex-column();
+  justify-content: flex-start;
+  min-height: calc(100vh - 250px);
+  padding-bottom: 100px;
+  color: gray;
+  .title {
+    @include flex-column();
+    color: $primary;
+    margin-bottom: 30px;
+  }
+
+  .description {
+    text-align: center;
+    margin-top: 20px;
+    font-size: $mdFontSize;
+    .change {
+      color: $secondry;
+      padding: 10px;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .price {
+    border: 1px solid #c0c0c061;
+    width: 400px;
+    background: #c0c0c073;
+    border-radius: 20px;
+    padding: 0 30px;
+    margin: 30px 0;
+    font-size: $mdFontSize;
+    > div {
+      > div {
+        width: 100%;
+        @include flex();
+        padding: 5px;
+      }
+      padding: 20px 0;
+      .titleSpan {
+        width: 100%;
+      }
+      .pricePrimary {
+        color: $primary;
+        padding: 5px;
+        font-size: $lgFontSize;
+      }
+      .priceTax {
+        padding: 5px;
+        font-size: $lgFontSize;
+
+        color: black;
+      }
+      .priceTotal {
+        color: $secondry;
+        padding: 5px;
+        font-size: $xxlFontSize;
+        font-weight: bold;
+      }
+    }
+  }
+  .paymentMethodsContainer {
+    margin-top: 20px;
+    @include flex-column();
+    .paymentMethods {
+      @include flex();
+      .paymentMethod {
+        border: 1px solid silver;
+        width: 70px;
+        height: 70px;
+        @include flex();
+        cursor: pointer;
+        margin: 15px 20px;
+        border-radius: 10px;
+        span {
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+        }
+      }
+      .active {
+        @include shadowNormal();
+        border-color: $primary;
+      }
+      .zarin {
+        background: url(../../public/images/zarin.png);
+      }
+      .sadad {
+        background: url(../../public/images/sadad.ico);
+      }
+    }
+  }
+
+  .submit {
+    margin-top: 50px;
+    width: 400px;
+    button {
+      width: 100%;
+    }
+  }
+  .cancel {
+    font-size: $smFontSize;
+    margin: 30px;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

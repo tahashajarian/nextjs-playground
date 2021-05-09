@@ -3,7 +3,7 @@ import Image from "next/image";
 import style from "./home.module.scss";
 import utils from "../../components/utils.module.scss";
 import Link from "next/link";
-import { routes } from "../../constants/routes";
+import { staticRoutes } from "../../constants/routes";
 
 const Home = () => {
   return (
@@ -27,7 +27,7 @@ const Home = () => {
           اعتبار خود را در نزد آنها مشاهده نمایید.
         </p>
         <div className={style.actions}>
-          <Link href={routes.inquiry}>
+          <Link href={staticRoutes.inquiry}>
             <button
               className={`${utils.lgButtonPrimary} ${utils.shadowPrimary}`}
             >
@@ -133,7 +133,7 @@ const Home = () => {
             </p>
           </div>
           <div>
-            <Link href={routes.inquiry}>
+            <Link href={staticRoutes.inquiry}>
               <button
                 className={`${utils.lgButtonPrimary} ${utils.shadowPrimary}`}
               >
@@ -270,7 +270,7 @@ const Home = () => {
             </p>
           </div>
           <div>
-            <Link href={routes.inquiry}>
+            <Link href={staticRoutes.inquiry}>
               <button
                 className={`${utils.lgButtonPrimary} ${utils.shadowPrimary}`}
               >
