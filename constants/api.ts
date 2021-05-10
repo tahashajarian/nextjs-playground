@@ -3,4 +3,5 @@ export const apies = {
   inquiryLegal: "/Inquiry/Legal",
   paymentRequest: "/PaymentRequest",
   payment: "/payment",
+  zarinpal: "https://www.zarinpal.com/pg/StartPay/",
 };

@@ -1,22 +1,22 @@
-// import success from "../images/icons/success.svg";
-// import warning from "../images/icons/warning.svg";
-// import cancel from "../images/icons/cancel.svg";
-// import error from "../images/icons/error.svg";
-// import T from "../translate/translate";
+// // import success from "../utils/icons/success.svg";
+// // import warning from "../images/icons/warning.svg";
+// // import cancel from "../images/icons/cancel.svg";
+// // import error from "../images/icons/error.svg";
 // import { copyTextToClipboard } from "../utils/copy-text-to-clipborad";
 
 // const getIcon = (type) => {
-//   switch (type) {
-//     case "success":
-//       return success;
-//     case "error":
-//       return warning;
-//     case "warning":
-//       return error;
+//   return undefined;
+//   // switch (type) {
+//   //   case "success":
+//   //     return success;
+//   //   case "error":
+//   //     return warning;
+//   //   case "warning":
+//   //     return error;
 
-//     default:
-//       return success;
-//   }
+//   //   default:
+//   //     return success;
+//   // }
 // };
 
 // const getClassNameTimeLine = (type) => {

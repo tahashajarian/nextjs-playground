@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="12" height="11.987" viewBox="0 0 12 11.987">
+    <defs>
+        <style>
+            .cls-1{fill:#9e9e9e}
+        </style>
+    </defs>
+    <g id="cancel" transform="translate(0 -.135)">
+        <path id="Close" d="M6.873 6.137l4.932-4.9a.594.594 0 0 0 0-.846.608.608 0 0 0-.855 0l-4.928 4.9L1.05.312a.605.605 0 1 0-.855.857l4.97 4.97L.177 11.1a.6.6 0 0 0 0 .846.608.608 0 0 0 .855 0L6.015 6.99l4.953 4.954a.605.605 0 1 0 .855-.857z" class="cls-1"/>
+    </g>
+</svg>

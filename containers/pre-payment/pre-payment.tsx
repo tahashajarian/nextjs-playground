@@ -6,13 +6,19 @@ import Button from "../../components/button/button";
 import axiosInstance from "../../utils/axiosInstance";
 import { apies } from "../../constants/api";
 import Spinner from "../../components/spinner/spinner";
-import { useAppContext, StateInterface } from "../../context/state";
+import {
+  useAppContext,
+  StateInterface,
+  useAppContextUpdate,
+} from "../../context/state";
 import { useRouter } from "next/router";
 const PrePayment = () => {
   const [loading, setLoading] = useState(false);
   const state: StateInterface = useAppContext();
+  const updateState = useAppContextUpdate();
+
   useEffect(() => {
-    // if (!state.mobileNumber) redirectToHome();
+    // if (!state.mobileNumber) redirectToHome(); TODO: remove this line
   }, [state]);
   const submitForm = (e) => {
     e.preventDefault();
@@ -25,6 +31,11 @@ const PrePayment = () => {
       .then((response) => {
         setLoading(false);
         if (response.data && response.data.statusCode === 200) {
+          updateState({
+            bankHashCode: response.data.data.bankHashCode,
+          });
+          document.location.href =
+            apies.zarinpal + response.data.data.bankHashCode;
         }
       })
       .catch((error) => {
@@ -112,7 +123,7 @@ const PrePayment = () => {
           >
             <span className={style.zarin}></span>
           </div>
-          <div
+          {/* <div
             data-id="1"
             onClick={() => handleChangepaymentMethod(1)}
             className={`${style.paymentMethod} ${
@@ -120,7 +131,7 @@ const PrePayment = () => {
             }`}
           >
             <span className={style.sadad}></span>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className={style.submit}>

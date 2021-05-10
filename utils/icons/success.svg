@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <style>
+            .cls-1{fill:#4caf50}.cls-2{fill:#fff}
+        </style>
+    </defs>
+    <g id="success" transform="translate(-213 -29)">
+        <circle id="Ellipse_15" cx="12" cy="12" r="12" class="cls-1" data-name="Ellipse 15" transform="translate(213 29)"/>
+        <path id="tick" d="M-140.129-359.689l-3.187-3.255a.622.622 0 0 1 0-.867.591.591 0 0 1 .849 0l2.763 2.822 7.188-7.341a.591.591 0 0 1 .849 0 .622.622 0 0 1 0 .867l-7.613 7.775a.591.591 0 0 1-.849 0" class="cls-2" transform="translate(362.493 405.509)"/>
+    </g>
+</svg>
