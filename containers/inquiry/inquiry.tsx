@@ -15,6 +15,7 @@ import {
   StateInterface,
 } from "../../context/state";
 import { useRouter } from "next/router";
+import { useToasts } from "react-toast-notifications";
 const Inquiry = () => {
   const [reportType, setReportType] = useState<"haghighi" | "hoghoughi">(
     "haghighi"
@@ -24,7 +25,7 @@ const Inquiry = () => {
   };
 
   const state: StateInterface = useAppContext();
-
+  const { addToast } = useToasts();
   const [companyNationalCode, setCompanyNationalCode] = useState(
     state.companyNationalCode
   );
@@ -120,6 +121,12 @@ const Inquiry = () => {
               });
               redircetToPrePaymentPage();
             }
+            if (response.data.message) {
+              addToast(response.data.message, {
+                appearance: "info",
+                autoDismiss: true,
+              });
+            }
           })
           .catch((error) => {
             setLoading(false);
@@ -157,6 +164,12 @@ const Inquiry = () => {
                 trackId: response.data.data,
               });
               redircetToPrePaymentPage();
+            }
+            if (response.data.message) {
+              addToast(response.data.message, {
+                appearance: "info",
+                autoDismiss: true,
+              });
             }
           })
           .catch((error) => {

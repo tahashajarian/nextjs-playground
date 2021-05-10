@@ -12,10 +12,12 @@ import {
   useAppContextUpdate,
 } from "../../context/state";
 import { useRouter } from "next/router";
+import { useToasts } from "react-toast-notifications";
 const PrePayment = () => {
   const [loading, setLoading] = useState(false);
   const state: StateInterface = useAppContext();
   const updateState = useAppContextUpdate();
+  const { addToast } = useToasts();
 
   useEffect(() => {
     // if (!state.mobileNumber) redirectToHome(); TODO: remove this line
@@ -36,6 +38,13 @@ const PrePayment = () => {
           });
           document.location.href =
             apies.zarinpal + response.data.data.bankHashCode;
+        }
+        if (response.data.message) {
+          addToast(response.data.message, {
+            appearance: "info",
+            autoDismiss: true,
+            placeMent: "top-left",
+          });
         }
       })
       .catch((error) => {

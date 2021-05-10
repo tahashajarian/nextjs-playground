@@ -131,6 +131,8 @@
 //   };
 // };
 import React from "react";
+import { useToasts } from "react-toast-notifications";
+import { useAppContext } from "../context/state";
 
 interface Props {
   x: any;
@@ -138,7 +140,16 @@ interface Props {
 }
 
 const notification = (x, y) => {
-  return <div></div>;
+  console.log("add tost => ", x, y);
+  // const { addToast } = useToasts();
+  // addToast(x, {
+  //   appearance: "error",
+  //   autoDismiss: true,
+  // });
+  // const state = useAppContext();
+  // console.log("state => ", state);
+  // alert(x);
+  // return <div></div>;
 };
 
 export default notification;
