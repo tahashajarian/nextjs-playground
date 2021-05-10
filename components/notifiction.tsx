@@ -34,7 +34,7 @@
 
 // const errorInServerText = "خطا در سرور";
 
-// export const notifiction = (
+// export const notification = (
 //   text: string,
 //   type: "success" | "warning" | "error"
 // ) => {
@@ -132,10 +132,13 @@
 // };
 import React from "react";
 
-interface Props {}
+interface Props {
+  x: any;
+  y: any;
+}
 
-const notifiction = (props: Props) => {
+const notification = (x, y) => {
   return <div></div>;
 };
 
-export default notifiction;
+export default notification;
