@@ -50,9 +50,6 @@ const Inquiry = () => {
     console.log("disabled submit => ", disableSubmit);
   }, [disableSubmit]);
 
-  const x = useAppContext();
-  console.log("contxt => ", x);
-
   useEffect(() => {
     if (reportType === "haghighi") {
       if (nationalCode && mobileNumber) setDisableSubmit(false);
