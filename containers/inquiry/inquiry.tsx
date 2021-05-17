@@ -5,7 +5,11 @@ import style from "./inquiry.module.scss";
 import utils from "../../components/utils.module.scss";
 import Input from "../../components/input/input";
 import Button from "../../components/button/button";
-import { checkMelliCode, checkMobile } from "../../utils/validate";
+import {
+  checkMelliCode,
+  checkMobile,
+  checkMelliShenase,
+} from "../../utils/validate";
 import axiosInstance from "../../utils/axiosInstance";
 import { apies } from "../../constants/api";
 import Spinner from "../../components/spinner/spinner";
@@ -17,9 +21,8 @@ import {
 import { useRouter } from "next/router";
 import { useToasts } from "react-toast-notifications";
 const Inquiry = () => {
-  const [reportType, setReportType] = useState<"haghighi" | "hoghoughi">(
-    "haghighi"
-  );
+  const [reportType, setReportType] =
+    useState<"haghighi" | "hoghoughi">("haghighi");
   const handleChnageReportType = (reportType) => {
     setReportType(reportType);
   };
@@ -32,9 +35,8 @@ const Inquiry = () => {
   const [nationalCode, setNationalCode] = useState(state.nationalCode);
   const [mobileNumber, setMobileNumber] = useState(state.mobileNumber);
 
-  const [companyNationalCodeError, setCompanyNationalCodeError] = useState(
-    false
-  );
+  const [companyNationalCodeError, setCompanyNationalCodeError] =
+    useState(false);
   const [nationalCodeError, setNationalCodeError] = useState(false);
   const [mobileNumberError, setMobileNumberError] = useState(false);
 
@@ -133,7 +135,7 @@ const Inquiry = () => {
           });
       }
     } else {
-      if (!checkMelliCode(nationalCode)) {
+      if (!checkMelliShenase(nationalCode)) {
         setNationalCodeError(true);
         hasError = true;
       }
