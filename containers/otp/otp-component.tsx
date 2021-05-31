@@ -5,19 +5,29 @@ import Input from "../../components/input/input";
 import utils from "../../components/utils.module.scss";
 import Link from "next/link";
 import { staticRoutes } from "../../constants/routes";
+import Spinner from "../../components/spinner/spinner";
+import axiosInstance from "../../utils/axiosInstance";
+import { apies } from "../../constants/api";
+import Button from "../../components/button/button";
+import { downloadFile } from "../../utils/download";
 
 const Otp = () => {
-  const timeWait = 120;
+  const timeWait = 10;
   const [timer, setTimer] = useState(timeWait);
-  const [status, setStatus] = useState<any>();
+  const [hashCode, setHashCode] = useState<any>();
   const [nationalCode, setNationalCode] = useState<any>();
-  const [phoneNumber, setphoneNumber] = useState<any>();
+  const [mobileNumber, setMobileNumber] = useState<any>();
+  const [companyNationalCode, setCompanyNationalCode] = useState<any>();
+  const [loading, setLoading] = useState(false);
+  const [otp, setOtp] = useState("");
+
   const route = useRouter();
   useEffect(() => {
     const url = new URL("http://example" + route.asPath);
-    setStatus(url.searchParams.get("status"));
+    setHashCode(url.searchParams.get("hashCode"));
     setNationalCode(url.searchParams.get("nationalCode"));
-    setphoneNumber(url.searchParams.get("phoneNumber"));
+    setMobileNumber(url.searchParams.get("mobileNumber"));
+    setCompanyNationalCode(url.searchParams.get("companyNationalCode"));
   }, []);
 
   useEffect(() => {
@@ -29,48 +39,95 @@ const Otp = () => {
   }, [timer]);
 
   const resend = () => {
-    setTimer(timeWait);
+    setLoading(true);
+    axiosInstance
+      .post(apies.renewToken(hashCode), {})
+      .then((response) => {
+        setLoading(false);
+        if (response.data) {
+          setTimer(timeWait);
+        }
+      })
+      .catch((err) => {
+        setLoading(false);
+      });
+  };
+
+  const submitForm = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    axiosInstance
+      .post(
+        apies.generateReport(hashCode),
+        {
+          otp,
+        },
+        {
+          responseType: "blob",
+        }
+      )
+      .then((response) => {
+        setLoading(false);
+        if (response.data) {
+          downloadFile(
+            response.data,
+            `report-${nationalCode}-${new Date().getTime()}.pdf`
+          );
+        }
+        route.push("/");
+      })
+      .catch((err) => {
+        setLoading(false);
+      });
+    console.log("for submited");
   };
 
   return (
-    <div className={style.container}>
+    <form className={style.container} onSubmit={submitForm}>
+      <Spinner show={loading} />
       <div className={style.payment}>
-        {status === "true" ? (
+        {hashCode ? (
           <span className={style.success}>پرداخت شما با موفقیت انجام شد</span>
         ) : (
           <span className={style.fail}>پرداخت انجام نشد</span>
         )}
-        {status !== "true" ? (
-          <p></p>
-        ) : (
+        {hashCode ? (
           <p>
             گزارش اعتباری برای شماره ملی
             <b> {nationalCode} </b>و شماره همراه
-            <b> {phoneNumber} </b>
+            <b> {mobileNumber} </b>
+            {companyNationalCode
+              ? ` و شماره ملی مدیر عامل ${companyNationalCode} `
+              : ""}
             آماده دریافت است لطفا کد یکبار مصرف که به شماره همراه ثبت شده ارسال
             شده در کادر زیر وارد نمایید سپس دکمه
             <b> دانلود گزارش اعتباری </b>
             را بزنید
           </p>
+        ) : (
+          <p></p>
         )}
       </div>
-      {status === "true" ? (
+      {hashCode ? (
         <div>
           <div>
             <Input
               label={""}
-              onChange={() => {}}
+              onChange={(e: any) => setOtp(e.target.value)}
               placeholder={"کد یک بار مصرف را وارد کنید"}
-              value={""}
+              value={otp}
               width={"400px"}
               type="number"
             />
           </div>
           <div className={style.timer}>
             {timer > 0 ? (
-              <div>{`0${Math.trunc(timer / 60)}:${
-                timer % 60 < 10 ? "0" + (timer % 60) : timer % 60
-              }`}</div>
+              <div>
+                {`0${Math.trunc(timer / 60)}:${
+                  timer % 60 < 10 ? "0" + (timer % 60) : timer % 60
+                }`}{" "}
+                <span style={{ color: "silver" }}>ارسال مجدد کد</span>
+              </div>
             ) : (
               <div>
                 <span>کد را دریافت نکردید؟</span>
@@ -81,21 +138,32 @@ const Otp = () => {
             )}
           </div>
           <div className={style.submit}>
-            <button
+            {/* <button
               className={`${utils.lgButtonPrimary} ${utils.shadowPrimary}`}
+              type="submit"
+              disabled={!otp}
             >
-              ارسال
-            </button>
+              ارسال کد و دریافت گزارش
+            </button> */}
+            <Button
+              label="ارسال کد و دریافت گزارش"
+              disabled={!otp}
+              className={`lgButtonPrimary`}
+              type="submit"
+            />
           </div>
         </div>
       ) : (
         <Link href={staticRoutes.home}>
-          <button className={`${utils.lgButtonPrimary} ${utils.shadowPrimary}`}>
+          <button
+            className={`${utils.lgButtonPrimary} ${utils.shadowPrimary}`}
+            type="button"
+          >
             بازگشت به صفحه اصلی{" "}
           </button>
         </Link>
       )}
-    </div>
+    </form>
   );
 };
 

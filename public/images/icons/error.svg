@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <style>
+            .cls-1{fill:#ff9800}.cls-2{fill:#fff}
+        </style>
+    </defs>
+    <g id="error" transform="translate(-213 -29)">
+        <circle id="Ellipse_15" cx="12" cy="12" r="12" class="cls-1" data-name="Ellipse 15" transform="translate(213 29)"/>
+        <path id="Union_3" d="M-5107.7 3086.605v-5.453a.91.91 0 0 1 .91-.91.91.91 0 0 1 .909.91v5.453a.91.91 0 0 1-.909.91.91.91 0 0 1-.91-.91zm-.3-9.393a1.213 1.213 0 0 1 1.212-1.213 1.213 1.213 0 0 1 1.211 1.213 1.213 1.213 0 0 1-1.211 1.211 1.213 1.213 0 0 1-1.212-1.21z" class="cls-2" data-name="Union 3" transform="translate(5332 -3041)"/>
+    </g>
+</svg>

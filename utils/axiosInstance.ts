@@ -1,5 +1,5 @@
 import Axios from "axios";
-import notification from "../components/notifiction";
+import notification from "../components/notification/notifiction";
 
 const axiosInstance = Axios.create({
   headers: {
@@ -28,7 +28,7 @@ const errorHandler = (error: any) => {
     "background: #8B0000; color: #ffffff; font-size:11pt; font-weight: bold;",
     error.response
   );
-
+  notification(`خطا در سرور `, "error");
   return Promise.reject({ ...error });
 };
 
@@ -41,15 +41,15 @@ const successHandler = (response: any) => {
 
   if (response.data) {
     let color;
-    if (response.data.status === 200) {
+    if (response.data.statusCode === 200) {
       color = "success";
-    } else if (response.data.status < 400) {
+    } else if (response.data.statusCode < 400) {
       color = "warning";
     } else {
       color = "error";
     }
 
-    if (response.data && response.data.message) {
+    if (response.data.message) {
       notification(response.data.message, color);
     } else if (response.data.statusCode === 500) {
       notification(
@@ -62,9 +62,6 @@ const successHandler = (response: any) => {
         "%c خطای دسترسی",
         "background: yellow; color: #000; font-size:11pt; font-weight: bold;"
       );
-    }
-    if (response.data.code) {
-      notification("خطا در سرور", "error");
     }
   }
 

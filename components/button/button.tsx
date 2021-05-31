@@ -5,6 +5,7 @@ import utils from "../utils.module.scss";
 interface Props {
   label: string;
   disabled?: boolean;
+  type?: "button" | "submit";
   className:
     | "lgButtonPrimary"
     | "lgButtonSecondry"

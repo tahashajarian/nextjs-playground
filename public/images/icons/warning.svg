@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <style>
+            .cls-1{fill:#ef5350}.cls-2{fill:#fff}
+        </style>
+    </defs>
+    <g id="warning" transform="translate(-213 -29)">
+        <circle id="Ellipse_15" cx="12" cy="12" r="12" class="cls-1" data-name="Ellipse 15" transform="translate(213 29)"/>
+        <path id="Close" d="M6.873 6.137l4.932-4.9a.594.594 0 0 0 0-.846.608.608 0 0 0-.855 0l-4.928 4.9L1.05.312a.605.605 0 1 0-.855.857l4.97 4.97L.177 11.1a.6.6 0 0 0 0 .846.608.608 0 0 0 .855 0L6.015 6.99l4.953 4.954a.605.605 0 1 0 .855-.857z" class="cls-2" transform="translate(219 34.865)"/>
+    </g>
+</svg>
