@@ -12,7 +12,7 @@ import Button from "../../components/button/button";
 import { downloadFile } from "../../utils/download";
 
 const Otp = () => {
-  const timeWait = 10;
+  const timeWait = 120;
   const [timer, setTimer] = useState(timeWait);
   const [hashCode, setHashCode] = useState<any>();
   const [nationalCode, setNationalCode] = useState<any>();
