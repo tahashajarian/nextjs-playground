@@ -32,8 +32,12 @@
       cursor: pointer;
     }
 
-    a {
-      text-decoration: none;
+    .link {
+      cursor: pointer;
+      color: $primary;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }

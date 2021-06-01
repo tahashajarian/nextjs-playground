@@ -5,6 +5,8 @@ import utils from "../utils.module.scss";
 interface Props {
   label: string;
   disabled?: boolean;
+  style?: any;
+  onclick?: any;
   type?: "button" | "submit";
   className:
     | "lgButtonPrimary"
@@ -24,8 +26,12 @@ const Button = (props: Props) => (
       props.disabled ? "" : utils.shadowPrimary
     } ${props.disabled ? style.disabled : ""}`}
     type="submit"
-    style={{ cursor: props.disabled ? "not-allowed" : "pointer" }}
+    style={{
+      cursor: props.disabled ? "not-allowed" : "pointer",
+      ...props.style,
+    }}
     disabled={props.disabled}
+    onClick={props.onclick}
   >
     {props.label}
   </button>

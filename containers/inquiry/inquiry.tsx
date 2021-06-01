@@ -65,6 +65,9 @@ const Inquiry = () => {
     const value = e.target.value;
     setNationalCode(value);
     setNationalCodeError(false);
+    updateState({
+      nationalCode: value,
+    });
   };
 
   const updateState = useAppContextUpdate();
@@ -78,12 +81,18 @@ const Inquiry = () => {
     const value = e.target.value;
     setCompanyNationalCode(value);
     setCompanyNationalCodeError(false);
+    updateState({
+      companyNationalCode: value,
+    });
   };
 
   const handleChangeMobileNumber = (e) => {
     const value = e.target.value;
     setMobileNumber(value);
     setMobileNumberError(false);
+    updateState({
+      mobileNumber: value,
+    });
   };
 
   const submitForm = (e) => {
@@ -184,6 +193,10 @@ const Inquiry = () => {
     setAcceptedRulesError(false);
   };
 
+  const redirectToRulesPage = () => {
+    route.push(staticRoutes.rules);
+  };
+
   return (
     <form className={style.inquiryContainer} onSubmit={submitForm}>
       <Spinner show={loading} />
@@ -254,7 +267,9 @@ const Inquiry = () => {
         />
         <span></span>
         <span>
-          <a href={staticRoutes.rules}>قوانین اعتبار من</a>
+          <a className={style.link} onClick={redirectToRulesPage}>
+            قوانین اعتبار من
+          </a>
           &nbsp;
           <span>را مطالعه نموده و می‌پذیرم</span>
         </span>
