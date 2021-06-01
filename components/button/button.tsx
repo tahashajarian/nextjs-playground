@@ -8,6 +8,7 @@ interface Props {
   style?: any;
   onclick?: any;
   type?: "button" | "submit";
+  noShadow?: boolean;
   className:
     | "lgButtonPrimary"
     | "lgButtonSecondry"
@@ -23,8 +24,10 @@ interface Props {
 const Button = (props: Props) => (
   <button
     className={`${style.button} ${utils[props.className]} ${
-      props.disabled ? "" : utils.shadowPrimary
-    } ${props.disabled ? style.disabled : ""}`}
+      utils.shadowPrimary
+    } ${props.disabled || props.noShadow ? utils.noShadow : ""} ${
+      props.disabled ? style.disabled : ""
+    }`}
     type="submit"
     style={{
       cursor: props.disabled ? "not-allowed" : "pointer",

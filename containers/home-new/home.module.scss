@@ -1,0 +1,467 @@
+@import "../../components/base.scss";
+
+.home {
+  .homeSection {
+    padding-right: 3%;
+    margin: 10% 0;
+    max-width: 45%;
+    span {
+      font-size: $smFontSize;
+    }
+    p {
+      font-size: $smFontSize;
+      text-align: justify;
+      color: gray;
+    }
+    h1 {
+      color: $primary;
+    }
+    h2 {
+      color: $primary;
+    }
+    .actions {
+      margin-top: 100px;
+      @include flex();
+      button {
+        margin: 10px;
+      }
+    }
+  }
+  .homeSection2 {
+    position: relative;
+    padding-right: 3%;
+    margin: 15% 0;
+    span {
+      font-size: $smFontSize;
+    }
+    p {
+      max-width: 55%;
+      font-size: $smFontSize;
+      text-align: justify;
+      color: gray;
+    }
+    h2 {
+      color: $primary;
+      font-size: $lgFontSize;
+      border-right: 5px solid $secondry;
+      padding-right: 15px;
+      margin-bottom: 50px;
+    }
+    .actions {
+      margin-top: 100px;
+      @include flex();
+      button {
+        margin: 10px;
+      }
+    }
+    .gauge {
+      @include flex-column();
+      top: 30px;
+      position: absolute;
+      left: 10%;
+      width: 250px;
+      background: white;
+      border-radius: 30px;
+      padding: 15px;
+      img {
+        width: 100%;
+        margin-left: 10px;
+      }
+      span:nth-child(2) {
+        color: #169981;
+        font-size: $lgFontSize;
+        font-weight: bolder;
+      }
+      span:nth-child(3) {
+        color: gray;
+        margin: 10px;
+      }
+      span:last-child {
+        color: $primary;
+        font-size: 28pt;
+        font-weight: bold;
+      }
+    }
+  }
+  // .home-section1 {
+  // }
+  .homeSection3 {
+    padding-top: 150px;
+    width: 100%;
+    @include flex-column();
+    h2 {
+      color: $primary;
+    }
+    > span {
+      font-size: $smFontSize;
+      color: gray;
+      margin: 10px;
+      text-align: justify;
+    }
+    .plateContainer {
+      // border: 1px solid red;
+      @include flex();
+      align-items: flex-start;
+      // flex-wrap: wrap;
+      width: 100%;
+      > div {
+        width: 300px;
+        @include shadowNormal();
+        @include flex-column();
+        margin: 3%;
+        padding: 20px;
+        background: $white;
+        border-radius: 30px;
+        margin-top: 0;
+        img {
+          height: 65px;
+          margin: 10px;
+        }
+        b {
+          // color: $primary;
+          font-size: $smFontSize;
+          font-weight: normal;
+          color: $black;
+          white-space: nowrap;
+        }
+        span {
+          font-size: $xsFontSize;
+          color: gray;
+          margin: 10px;
+          text-align: justify;
+        }
+      }
+      > div:nth-child(2),
+      > div:nth-child(3) {
+        margin-top: 60px;
+      }
+    }
+  }
+  .homeSection4 {
+    margin-bottom: 100px;
+    margin-top: 100px;
+    @include flex();
+
+    .textContainer {
+      @include flex();
+
+      width: 65%;
+      > div {
+        margin: 0 20px;
+      }
+    }
+    h3 {
+      color: $secondry;
+    }
+    p {
+      color: $white;
+      font-size: $smFontSize;
+    }
+    button {
+      white-space: nowrap;
+    }
+  }
+  .homeSection5 {
+    padding: 50px;
+    @include flex-column();
+    h3 {
+      color: $primary;
+    }
+    > span {
+      font-size: $smFontSize;
+      color: gray;
+    }
+    .charts {
+      > div {
+        margin: 30px 0;
+        @include flex();
+        flex-direction: row-reverse;
+        .texts {
+          @include flex-column();
+          width: 40%;
+          align-items: flex-start;
+          .text {
+            font-size: $smFontSize;
+            color: gray;
+          }
+        }
+        .chart {
+          > span:first-child {
+            width: 50px;
+            // border: 1px solid;
+            text-align: center;
+          }
+          width: 60%;
+          direction: ltr;
+          padding-left: 50px;
+          font-size: $xlFontSize;
+          font-weight: bold;
+          @include flex();
+          justify-content: flex-start;
+          .chartColor {
+            height: 15px;
+            @include flex();
+            margin-left: 10px;
+            @include shadowNormal();
+            border-radius: 10px;
+          }
+        }
+      }
+      > div:nth-child(1) {
+        .chartColor {
+          background: #5ac87b;
+          width: 98%;
+        }
+      }
+      > div:nth-child(2) {
+        .chartColor {
+          background: #408de5;
+          width: 24%;
+        }
+      }
+      > div:nth-child(3) {
+        .chartColor {
+          background: #af53ec;
+          width: 32%;
+        }
+      }
+      > div:nth-child(4) {
+        .chartColor {
+          background: #e94e4e;
+          width: 18%;
+        }
+      }
+      > div:nth-child(5) {
+        .chartColor {
+          background: #48d2d2;
+          width: 28%;
+        }
+      }
+    }
+  }
+  .homeSection6 {
+    padding: 50px;
+    @include flex-column();
+    margin-top: 50px;
+    h3 {
+      color: $primary;
+    }
+    > span {
+      font-size: $smFontSize;
+      color: gray;
+      width: 600px;
+      text-align: center;
+    }
+    > div {
+      padding-right: 50px;
+      @include flex-column();
+      align-items: flex-start;
+      span:first-child {
+        color: $primary;
+        margin-top: 50px;
+        position: relative;
+        img {
+          right: -22px;
+          top: 13px;
+          position: absolute;
+        }
+      }
+      span:nth-child(2) {
+        font-size: $smFontSize;
+        color: gray;
+        padding: 10px 30px;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        margin-top: 30px;
+      }
+      li {
+        margin: 15px 0;
+        font-size: $mdFontSize;
+        position: relative;
+        &::before {
+          content: "+";
+          position: absolute;
+          right: -20px;
+        }
+      }
+    }
+  }
+  .homeSection7 {
+    margin-bottom: 100px;
+    margin-top: 100px;
+    @include flex();
+    width: 90%;
+    .textContainer {
+      @include flex();
+      width: 100%;
+      padding-right: 50px;
+      // width: 65%;
+      > div {
+        margin: 0 20px;
+      }
+    }
+    h3 {
+      color: $secondry;
+    }
+    p {
+      // color: $white;
+      font-size: $smFontSize;
+    }
+    button {
+      white-space: nowrap;
+    }
+  }
+  .backgroundSection1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    img {
+      position: absolute;
+    }
+    .el1 {
+      left: calc(50% - 224px);
+      top: 0;
+    }
+    .dot1 {
+      right: 50%;
+      top: 220px;
+    }
+    .leftSide {
+      top: 0;
+      left: 0;
+      width: 40%;
+      // max-width: 700px;
+    }
+    .dot2 {
+      top: 600px;
+      left: 85%;
+    }
+    .circle1 {
+      width: 500px;
+      top: 700px;
+      right: -250px;
+    }
+    .circle2 {
+      top: 1150px;
+      left: 250px;
+    }
+  }
+  .backgroundSection2 {
+    position: absolute;
+    top: 1250px;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    img {
+      position: absolute;
+    }
+    .bgSection3 {
+      top: 0;
+      right: 0;
+      // width: 100%;
+    }
+    .cricle3 {
+      z-index: 2;
+      right: 8%;
+      top: 150px;
+    }
+    .dots4 {
+      z-index: 2;
+      top: 480px;
+      left: 12%;
+    }
+  }
+  .backgroundSection3 {
+    position: absolute;
+    top: 1900px;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    img {
+      position: absolute;
+    }
+    .bg {
+      top: 0;
+      left: 0;
+      width: 100vw;
+      @include flex();
+      overflow: hidden;
+      height: 300px;
+      position: relative;
+      img {
+        width: 100%;
+      }
+    }
+    .dots5 {
+      z-index: 2;
+      right: 8%;
+      top: 150px;
+    }
+    .cricle4 {
+      z-index: 2;
+      top: -40px;
+      left: 12%;
+    }
+  }
+  .backgroundSection4 {
+    position: absolute;
+    top: 2350px;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    img {
+      position: absolute;
+    }
+    .cricle6 {
+      right: 0;
+      top: 150px;
+    }
+    .cricle5 {
+      top: -40px;
+      left: 0;
+    }
+  }
+  .backgroundSection6 {
+    position: absolute;
+    top: 2800px;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    img {
+      position: absolute;
+    }
+    .bg5 {
+      top: 0;
+      right: 0;
+      // width: 100%;
+    }
+    .cricle8 {
+      z-index: 2;
+      left: 0;
+      top: 300px;
+    }
+    .dots7 {
+      z-index: 2;
+      top: 230px;
+      right: 12%;
+    }
+  }
+  .backgroundSection7 {
+    position: absolute;
+    top: 3760px;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    img {
+      position: absolute;
+    }
+    .logo2 {
+      right: 5%;
+    }
+  }
+}

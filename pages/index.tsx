@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout/layout";
-import Home from "../containers/home/home";
+import Home2 from "../containers/home-new/home2";
+// import Home from "../containers/home/home";
 
 export default function Index() {
   return (
@@ -8,7 +9,7 @@ export default function Index() {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <Home />
+      <Home2 />
     </Layout>
   );
 }

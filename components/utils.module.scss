@@ -161,3 +161,7 @@
 .shadowNormal {
   box-shadow: 0 12px 40px 0 rgba(0, 90, 191, 0.2);
 }
+
+.noShadow {
+  box-shadow: none !important;
+}
