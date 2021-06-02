@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .btn {
+    @apply cursor-pointer flex justify-center items-center rounded-full  whitespace-nowrap;
+  }
+  .btn-primary-outline-sm {
+    @apply text-xs bg-white  text-brandPrimary-main border-solid border-2 border-brandPrimary-light py-2 px-4;
+  }
+  .btn-secondray-sm {
+    @apply text-xs text-white bg-brandSecondary-main  py-2 px-4;
+  }
+}
+
 @font-face {
   font-family: "IranSans";
   src: url("./fonts/iransans/IRANSansWeb\(FaNum\)_Medium.ttf");
