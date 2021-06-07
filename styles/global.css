@@ -9,100 +9,38 @@
   .btn-primary-outline-sm {
     @apply text-xs bg-white  text-brandPrimary-main border-solid border-2 border-brandPrimary-light py-2 px-4;
   }
+  .btn-secondray-outline-sm {
+    @apply text-xs bg-white  text-brandSecondary-main border-solid border-2 border-brandSecondary-light py-2 px-4;
+  }
   .btn-secondray-sm {
     @apply text-xs text-white bg-brandSecondary-main  py-2 px-4;
   }
+  .btn-primary-sm {
+    @apply text-xs  text-white bg-brandPrimary-main py-2 px-4;
+  }
+  /*  */
+  .btn-primary-outline {
+    @apply bg-white  text-brandPrimary-main border-solid border-2 border-brandPrimary-light py-2 px-6;
+  }
+  .btn-secondray-outline {
+    @apply bg-white  text-brandSecondary-main border-solid border-2 border-brandSecondary-light py-2 px-6;
+  }
+  .btn-secondray {
+    @apply text-white bg-brandSecondary-main  py-2 px-6;
+  }
+  .btn-primary {
+    @apply text-white bg-brandPrimary-main py-2 px-6;
+  }
 }
 
+@layer base {
+}
 @font-face {
-  font-family: "IranSans";
+  font-family: IranSans;
   src: url("./fonts/iransans/IRANSansWeb\(FaNum\)_Medium.ttf");
 }
 
-html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: "IranSans";
-  line-height: 1.6;
-  font-size: 18px;
   direction: rtl;
-  overflow-x: hidden;
-}
-
-* {
-  box-sizing: border-box;
   font-family: "IranSans";
-}
-
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Firefox */
-input[type="number"] {
-  -moz-appearance: textfield;
-}
-
-.loader,
-.loader:before,
-.loader:after {
-  background: #ffffff;
-  -webkit-animation: load1 1s infinite ease-in-out;
-  animation: load1 1s infinite ease-in-out;
-  width: 1em;
-  height: 4em;
-}
-.loader {
-  color: #ffffff;
-  text-indent: -9999em;
-  margin: 88px auto;
-  position: relative;
-  font-size: 11px;
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-animation-delay: -0.16s;
-  animation-delay: -0.16s;
-}
-.loader:before,
-.loader:after {
-  position: absolute;
-  top: 0;
-  content: "";
-}
-.loader:before {
-  left: -1.5em;
-  -webkit-animation-delay: -0.32s;
-  animation-delay: -0.32s;
-}
-.loader:after {
-  left: 1.5em;
-}
-@-webkit-keyframes load1 {
-  0%,
-  80%,
-  100% {
-    box-shadow: 0 0;
-    height: 4em;
-  }
-  40% {
-    box-shadow: 0 -2em;
-    height: 5em;
-  }
-}
-@keyframes load1 {
-  0%,
-  80%,
-  100% {
-    box-shadow: 0 0;
-    height: 4em;
-  }
-  40% {
-    box-shadow: 0 -2em;
-    height: 5em;
-  }
 }

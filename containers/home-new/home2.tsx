@@ -6,229 +6,210 @@ import Link from "next/link";
 import { staticRoutes } from "../../constants/routes";
 import Button from "../../components/button/button";
 
+const avamelMoaser = [
+  {
+    title: "رفتار در بازپرداخت اقساط",
+    description:
+      "موثرترین عامل بر رتبه اعتباری، بازپرداخت به موقع اقساط است که باعث افزایش امتیاز و رتبه اعتباری می‌شود.",
+    persent: "49",
+    color: "#5ac87b",
+  },
+  {
+    title: "نوع تسهیلات",
+    description:
+      "هرچه تنوع تسهیلات دریافتی مشتری (قرض‌الحسنه، مشارکت مدنی، ضمانت‌نامه و...) بیشتر باشد باعث افزایش امتیاز اعتباری وی خواهد شد.",
+    persent: "12",
+    color: "#408de5",
+  },
+  {
+    title: "توانایی مسجل شده در بازپرداخت",
+    description:
+      "مشتریانی که توانایی خود را در بازپرداخت به موقع اقساط تسهیلات خود با مبالغ بیشتر نشان داده‌اند دارای امتیاز بالاتری هستند.",
+    persent: "16",
+    color: "#af53ec",
+  },
+  {
+    title: "بدهی جاری",
+    description:
+      "وجود بدهی جاری برای مشتریان منجر به کاهش امتیاز و رتبه اعتباری می‌شود.",
+    persent: "9",
+    color: "#e94e4e",
+  },
+  {
+    title: "سایر اطلاعات",
+    description:
+      "انواع وضعیت منفی ( مشتری و قرارداد)، تعداد درخواست های مشتری برای تسهیلات، تعداد تسهیلاتی که وی ضامن آنها می‌باشد و سن مشتری",
+    persent: "14",
+    color: "#48d2d2",
+  },
+];
+
+const steps = [
+  {
+    title: "ورود شماره همراه و شماره ملی",
+    description:
+      "ابتدا شماره تلفن و شماره همراه خود را وارد نمایید. توجه کنید که هر دو باید به نام یک شخص باشد",
+    srcPic: "/images/phone-nationalcode.svg",
+  },
+  {
+    title: "پرداخت هزینه گزارش",
+    description:
+      "بعد از مشاهده تعرفه گزارش به صفحه درگاه پرداخت اینترنتی منتقل خواهید شد تا هزینه گزارش را پرداخت نمایید",
+    srcPic: "/images/payment.svg",
+  },
+  {
+    title: "تایید هویت",
+    description:
+      "پس از بازگشت از صفحه درگاه پرداخت، سیستم هویت شما را تایید نموده و آماده تحویل گزارش به شما خواهد شد",
+    srcPic: "/images/verify.svg",
+  },
+  {
+    title: "مشاهده گزارش اعتباری",
+    description:
+      "در مرحله آخر سامانه گزارش اعتباری و رتبه شما را نمایش خواهد داد. شما می‌توانید این گزارش را چاپ یا دریافت نمایید",
+    srcPic: "/images/report.svg",
+  },
+];
+
 const Home2 = () => {
   return (
-    <div className={style.home}>
-      <section className={style.homeSection}>
-        <div className={style.backgroundSection1}>
-          <img className={style.el1} src="/images/el1.svg" />
-          <img className={style.dot1} src="/images/dot1.svg" />
-          <img className={style.leftSide} src="/images/left-silde.png" />
-          <img className={style.dot2} src="/images/dots2.svg" />
-          <img className={style.circle1} src="/images/circle.svg" />
-          <img className={style.circle2} src="/images/circle.svg" />
-        </div>
-        <span>دسترسی به گزارشات اعتباری حقیقی و حقوقی</span>
-        <h1>سامانه اعتبار من</h1>
-        <p>
+    <div className={"text-gray-500 bg-gray-100"}>
+      <section className={"py-16 pt-32 px-4"}>
+        <span className="text-gray-400 text-sm">
+          دسترسی به گزارشات اعتباری حقیقی و حقوقی
+        </span>
+        <h1 className="text-brandPrimary-main text-2xl font-bold my-5 mt-2">
+          سامانه اعتبار من
+        </h1>
+        <p className="text-justify text-sm pb-4">
           بانک‌ها، موسسات مالی اعتباری، بنگاه‌های اقتصادی و ... امروزه برای سنجش
           اعتبار شما و اینکه بدانند مشتریانشان تا چه حد خوش حساب هستند، از
           گزارشات اعتباری استفاده می‌نمایند. شما با استفاده از سامانه اعتبار من
           می‌توانید به راحتی و در کمترین زمان این گزارش را دریافت نموده و میزان
           اعتبار خود را در نزد آنها مشاهده نمایید.
         </p>
-        <div className={style.actions}>
+        <div className="flex flex-row mt-10 flex-wrap h-28 items-center justify-start">
           <Link href={staticRoutes.inquiry}>
-            <Button
-              label=" دریافت گزارش اعتباری"
-              className={`lgButtonPrimary`}
-            />
+            <span className="btn btn-primary ml-2">دریافت گزارش اعتباری</span>
           </Link>
-          <Button
-            label="رتبه اعتباری چیست؟"
-            className={`lgButtonSecondryOutline`}
-            noShadow={true}
-          />
+          <span className="btn btn-secondray-outline bg-transparent">
+            رتبه اعتباری چیست؟
+          </span>
         </div>
       </section>
-      <section className={style.homeSection2}>
-        <h2>رتبه اعتباری چیست؟</h2>
+      <section className="py-16 px-4 pt-32 flex-col flex items-center justify-center">
+        <h2 className="w-full text-brandPrimary-main text-xl font-bold border-r-4 border-brandSecondary-main p-2 mb-4">
+          رتبه اعتباری چیست؟
+        </h2>
 
-        <p>
+        <p className="text-justify text-sm pb-4">
           امروزه یکی از ملاک‌های پرداخت وام در بانک‌ها و موسسات مالی اعتباری،
           رتبه اعتباری می‌باشد. در حال حاضر هر فرد که اقدام به دریافت تسهیلات
           می‌کند، توسط بانک یا موسسه اعطا کننده تسهیلات بعنوان یک شرط لازم
           دریافت وام، ‌اعتبارسنجی می‌شود.
         </p>
-        <p>
+        <p className="text-justify text-sm pb-4">
           رتبه اعتباری مشخص کننده خوش حسابی شما (حقیقی یا حقوقی) در نزد
           بنگاه‌های اقتصادی است. پرداخت به موقع اقساط تسهیلات بصورت منظم و عدم
           وجود بدهی مالیاتی، رتبه اعتباری شما را بهبود بخشیده و آن را ارتقا
           می‌دهد.
         </p>
-        <p>
+        <p className="text-justify text-sm pb-4">
           مطالبه رتبه اعتباری از افراد حقیقی و حقوقی، سبب کاهش خطر کلاه‌برداری و
           ریسک اعطای تسهیلات، سرمایه‌گذاری و معاملات می‌شود.
         </p>
-        <p>
+        <p className="text-justify text-sm pb-4">
           شما می‌توانید با استفاده از خدمات سامانه اعتبار من به راحتی و در
           کمترین زمان رتبه اعتباری خود را دریافت کنید.
         </p>
-        <div className={`${style.gauge} ${utils.shadowNormal}`}>
+        <div className="p-4 shadow-lg rounded-3xl flex flex-col justify-center items-center bg-white max-w-xs my-8">
           <img src="/images/gauge.svg" />
-          <span>رتبه اعتباری شما خوب</span>
-          <span>امتیاز شما:</span>
-          <span>158</span>
+          <span className="text-brandSecondary-dark font-bold text-lg">
+            رتبه اعتباری شما خوب
+          </span>
+          <span className="my-3">امتیاز شما:</span>
+          <span className="font-bold text-brandPrimary-dark text-4xl">158</span>
         </div>
       </section>
-      <section className={` ${style.homeSection3}`}>
-        <div className={style.backgroundSection2}>
-          <img className={style.bgSection3} src="/images/bg-section3.svg" />
-          <img className={style.cricle3} src="/images/circle3.svg" />
-          <img className={style.dots4} src="/images/dots4.svg" />
-        </div>
-        <h2>راهنمای دریافت گزارش اعتباری</h2>
-        <span>
+      <section className="bg-gray-200 flex-col flex items-center justify-center">
+        <h2 className=" text-brandPrimary-main text-xl font-bold pt-8">
+          راهنمای دریافت گزارش اعتباری
+        </h2>
+        <span className="text-gray-400 text-sm py-2">
           به راحتی و در کمترین زمان با سامانه اعتبار من رتبه اعتباری خود را
           دریافت نمایید
         </span>
-        <div className={style.plateContainer}>
-          <div>
-            <img src="/images/phone-nationalcode.svg" />
-            <b>ورود شماره همراه و شماره ملی</b>
-            <span>
-              ابتدا شماره تلفن و شماره همراه خود را وارد نمایید. توجه کنید که هر
-              دو باید به نام یک شخص باشد
-            </span>
-          </div>
-          <div>
-            <img src="/images/payment.svg" />
-            <b>پرداخت هزینه گزارش</b>
-            <span>
-              بعد از مشاهده تعرفه گزارش به صفحه درگاه پرداخت اینترنتی منتقل
-              خواهید شد تا هزینه گزارش را پرداخت نمایید
-            </span>
-          </div>
-          <div>
-            <img src="/images/verify.svg" />
-            <b>تایید هویت</b>
-            <span>
-              پس از بازگشت از صفحه درگاه پرداخت، سیستم هویت شما را تایید نموده و
-              آماده تحویل گزارش به شما خواهد شد
-            </span>
-          </div>
-          <div>
-            <img src="/images/report.svg" />
-            <b>مشاهده گزارش اعتباری</b>
-            <span>
-              در مرحله آخر سامانه گزارش اعتباری و رتبه شما را نمایش خواهد داد.
-              شما می‌توانید این گزارش را چاپ یا دریافت نمایید
-            </span>
-          </div>
+        <div className={"flex items-center flex-wrap justify-center pb-12"}>
+          {steps.map((step, index) => (
+            <div
+              key={index}
+              className="mx-8 p-4 shadow-lg rounded-3xl flex flex-col justify-center items-center bg-white w-64 my-8"
+            >
+              <img src={step.srcPic} />
+              <b className="my-4">{step.title}</b>
+              <span className="text-center text-sm text-gray-400">
+                {step.description}
+              </span>
+            </div>
+          ))}
         </div>
       </section>
-      <section className={` ${style.homeSection4}`}>
-        <div className={style.backgroundSection3}>
-          <img className={style.cricle4} src="/images/circle4.svg" />
-          <img className={style.dots5} src="/images/dots5.svg" />
-          <div className={style.bg}>
-            <img src="/images/pic_cta.png" />
-          </div>
-        </div>
-        <div className={style.textContainer}>
+      <section className="bg-pic_cta bg-cover object-center">
+        <div className="py-16 px-4">
           <div>
-            <h3>همین حالا گزارش اعتباری خود را دریافت کنید</h3>
-            <p>
+            <h3 className="text-brandSecondary-main text-lg font-bold mb-4">
+              همین حالا گزارش اعتباری خود را دریافت کنید
+            </h3>
+            <p className="text-white text-justify text-sm max-w-md">
               بدون نیاز به مراجعه به بانک و تنها با چند کلیک، ظرف چند دقیقه در
               سامانه اعتبار من گزارش اعتباری خود را دریافت و اقدام سنجش خود جهت
               دریافت تسهیلات در بانک‌ها و موسسات اقتصادی نمایید
             </p>
-          </div>
-          <div>
             <Link href={staticRoutes.inquiry}>
-              <Button
-                label=" دریافت گزارش اعتباری"
-                className={`lgButtonPrimary`}
-              />
+              <span className="btn btn-primary my-6 w-48">
+                دریافت گزارش اعتباری
+              </span>
             </Link>
           </div>
         </div>
       </section>
-      <section className={style.homeSection5}>
-        <div className={style.backgroundSection4}>
-          <img className={style.cricle5} src="/images/circle5.svg" />
-          <img className={style.cricle6} src="/images/circle6.svg" />
-        </div>
-        <h3>عوامل موثر بر رتبه‌بندی</h3>
-        <span>
+      <section className="bg-white flex-col flex items-center justify-center">
+        <h3 className="text-brandPrimary-main text-xl font-bold pt-8">
+          عوامل موثر بر رتبه‌بندی
+        </h3>
+        <span className="text-gray-400 text-sm py-2">
           اگر می‌خواهید رتبه اعتباری خود را افزایش دهید، باید بدانید چه عواملی
           بر آن موثر است
         </span>
-        <div className={style.charts}>
-          <div>
-            <div className={style.texts}>
-              <span className={style.title}>رفتار در بازپرداخت اقساط</span>
-              <span className={style.text}>
-                موثرترین عامل بر رتبه اعتباری، بازپرداخت به موقع اقساط است که
-                باعث افزایش امتیاز و رتبه اعتباری می‌شود.
-              </span>
+        <div className="flex flex-col items-center justify-center px-4 w-full">
+          {avamelMoaser.map((aamel, index) => (
+            <div
+              key={index}
+              className="flex flex-row-reverse lg:flex-nowrap flex-wrap my-4 w-full max-w-md lg:max-w-3xl"
+            >
+              <div className="flex flex-col w-full">
+                <span className="font-bold text-gray-900">{aamel.title}</span>
+                <span className="text-sm text-justify max-w-sm">
+                  {aamel.description}
+                </span>
+              </div>
+              <div className="w-full flex justify-start items-center my-4 lg:ml-4 lg:flex-row-reverse">
+                <span className="font-bold text-xl ml-2 text-gray-900 lg:mr-2">
+                  {aamel.persent}%
+                </span>
+                <span
+                  style={{
+                    width: aamel.persent + "%",
+                    background: aamel.color,
+                  }}
+                  className="block h-3 rounded-full shadow-lg"
+                ></span>
+              </div>
             </div>
-            <div className={style.chart}>
-              <span>49%</span>
-              <span className={style.chartColor}></span>
-            </div>
-          </div>
-          <div>
-            <div className={style.texts}>
-              <span className={style.title}>نوع تسهیلات</span>
-              <span className={style.text}>
-                هرچه تنوع تسهیلات دریافتی مشتری( قرض‌الحسنه، مشارکت مدنی،
-                ضمانت‌نامه و...) بیشتر باشد باعث افزایش امتیاز اعتباری وی خواهد
-                شد.
-              </span>
-            </div>
-            <div className={style.chart}>
-              <span>12%</span>
-              <span className={style.chartColor}></span>
-            </div>
-          </div>
-          <div>
-            <div className={style.texts}>
-              <span className={style.title}>توانایی مسجل شده در بازپرداخت</span>
-              <span className={style.text}>
-                مشتریانی که توانایی خود را در بازپرداخت به موقع اقساط تسهیلات
-                خود با مبالغ بیشتر نشان داده‌اند دارای امتیاز بالاتری هستند.
-              </span>
-            </div>
-            <div className={style.chart}>
-              <span>16%</span>
-              <span className={style.chartColor}></span>
-            </div>
-          </div>
-          <div>
-            <div className={style.texts}>
-              <span className={style.title}>بدهی جاری</span>
-              <span className={style.text}>
-                وجود بدهی جاری برای مشتریان منجر به کاهش امتیاز و رتبه اعتباری
-                می‌شود.
-              </span>
-            </div>
-            <div className={style.chart}>
-              <span>9%</span>
-              <span className={style.chartColor}></span>
-            </div>
-          </div>
-          <div>
-            <div className={style.texts}>
-              <span className={style.title}>سایر اطلاعات</span>
-              <span className={style.text}>
-                انواع وضعیت منفی ( مشتری و قرارداد)، تعداد درخواست های مشتری
-                برای تسهیلات، تعداد تسهیلاتی که وی ضامن آنها می‌باشد و سن مشتری
-              </span>
-            </div>
-            <div className={style.chart}>
-              <span>14%</span>
-              <span className={style.chartColor}></span>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
-      <section className={style.homeSection6}>
-        <div className={style.backgroundSection6}>
-          <img className={style.bg5} src="/images/bg5.svg" />
-          <img className={style.cricle8} src="/images/circle8.svg" />
-          <img className={style.dots7} src="/images/dots7.svg" />
-        </div>
+      <section className="">
         <h3>پرسش‌های متداول</h3>
         <span>
           بسیاری از کاربران ما سوالاتی مشابه سوالات شما دارند که می‌توانید با
@@ -257,11 +238,11 @@ const Home2 = () => {
           </ul>
         </div>
       </section>
-      <section className={` ${style.homeSection7}`}>
-        <div className={style.backgroundSection7}>
-          <img className={style.logo2} src="/images/logo-etebareman2.svg" />
+      <section className={` ${""}`}>
+        <div className={""}>
+          <img className={""} src="/images/logo-etebareman2.svg" />
         </div>
-        <div className={style.textContainer}>
+        <div className={""}>
           <div>
             <h3>اولین قدم برای دریافت تسهیلات</h3>
             <p>

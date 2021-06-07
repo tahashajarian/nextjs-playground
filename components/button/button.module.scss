@@ -1,96 +1,96 @@
-@import "../base.scss";
+// @import "../base.scss";
 
-@mixin smButton {
-  outline: none;
-  border: none;
-  @include flex();
-  cursor: pointer;
-  font-size: $smFontSize;
-  border-radius: 20px;
-  padding: 6px 12px;
-  white-space: nowrap;
-}
+// @mixin smButton {
+//   outline: none;
+//   border: none;
+//   @include flex();
+//   cursor: pointer;
+//   font-size: $smFontSize;
+//   border-radius: 20px;
+//   padding: 6px 12px;
+//   white-space: nowrap;
+// }
 
-@mixin mdButton {
-  outline: none;
-  border: none;
-  @include flex();
-  cursor: pointer;
-  font-size: $mdFontSize;
-  border-radius: 30px;
-  padding: 10px 20px;
-  white-space: nowrap;
-}
+// @mixin mdButton {
+//   outline: none;
+//   border: none;
+//   @include flex();
+//   cursor: pointer;
+//   font-size: $mdFontSize;
+//   border-radius: 30px;
+//   padding: 10px 20px;
+//   white-space: nowrap;
+// }
 
-@mixin lgButton {
-  outline: none;
-  border: none;
-  @include flex();
-  cursor: pointer;
-  font-size: $lgFontSize;
-  border-radius: 40px;
-  white-space: nowrap;
-  padding: 15px 30px;
-}
+// @mixin lgButton {
+//   outline: none;
+//   border: none;
+//   @include flex();
+//   cursor: pointer;
+//   font-size: $lgFontSize;
+//   border-radius: 40px;
+//   white-space: nowrap;
+//   padding: 15px 30px;
+// }
 
-.lgButtonPrimary {
-  @include lgButton();
-  background: $primary;
-  color: $white;
-}
+// .lgButtonPrimary {
+//   @include lgButton();
+//   background: $primary;
+//   color: $white;
+// }
 
-.lgButtonSecondry {
-  @include lgButton();
-  background: $secondry;
-  color: $white;
-}
+// .lgButtonSecondry {
+//   @include lgButton();
+//   background: $secondry;
+//   color: $white;
+// }
 
-.lgButtonPrimaryOutline {
-  @include lgButton();
-  border: 1px solid $primary;
-  color: $primary;
-  background: $white;
-}
+// .lgButtonPrimaryOutline {
+//   @include lgButton();
+//   border: 1px solid $primary;
+//   color: $primary;
+//   background: $white;
+// }
 
-.lgButtonSecondryOutline {
-  @include lgButton();
-  border: 1px solid $secondry;
-  color: $secondry;
-  background: $white;
-}
+// .lgButtonSecondryOutline {
+//   @include lgButton();
+//   border: 1px solid $secondry;
+//   color: $secondry;
+//   background: $white;
+// }
 
-.mdButtonPrimary {
-  @include mdButton();
-  background: $primary;
-  color: $white;
-}
+// .mdButtonPrimary {
+//   @include mdButton();
+//   background: $primary;
+//   color: $white;
+// }
 
-.mdButtonSecondry {
-  @include mdButton();
-  background: $secondry;
-  color: $white;
-}
+// .mdButtonSecondry {
+//   @include mdButton();
+//   background: $secondry;
+//   color: $white;
+// }
 
-.mdButtonPrimaryOutline {
-  @include mdButton();
-  border: 1px solid $primary;
-  color: $primary;
-  background: $white;
-}
+// .mdButtonPrimaryOutline {
+//   @include mdButton();
+//   border: 1px solid $primary;
+//   color: $primary;
+//   background: $white;
+// }
 
-.mdButtonSecondryOutline {
-  @include mdButton();
-  border: 1px solid $secondry;
-  color: $secondry;
-  background: $white;
-}
+// .mdButtonSecondryOutline {
+//   @include mdButton();
+//   border: 1px solid $secondry;
+//   color: $secondry;
+//   background: $white;
+// }
 
-.smButtonPrimary {
-  @include smButton();
-  background: $primary;
-  color: $white;
-}
+// .smButtonPrimary {
+//   @include smButton();
+//   background: $primary;
+//   color: $white;
+// }
 
-.disabled {
-  background: gray;
-}
+// .disabled {
+//   background: gray;
+// }

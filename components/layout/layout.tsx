@@ -15,13 +15,10 @@ export const pages = [
 
 export default function Layout({ children, home }) {
   return (
-    <div className={style.container}>
+    <div className="">
       <Head>
         <link rel="icon" href="/images/logo.svg" />
-        <meta
-          name="description"
-          content="Learn how to build a personal website using Next.js"
-        />
+        <meta name="description" content="My Credit" />
         <meta
           property="og:image"
           content={`https://og-image.vercel.app/${encodeURI(
