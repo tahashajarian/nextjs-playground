@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import style from "./home.module.scss";
 import utils from "../../components/utils.module.scss";
@@ -72,6 +72,55 @@ const steps = [
 ];
 
 const Home2 = () => {
+  const [qAndA, setQAndA] = useState([
+    {
+      question: "امکان دریافت گزارش اعتباری بدون شماره همراه وجود دارد؟",
+      answer:
+        "در هنگام درخواست گزارش اعتباری از آنجا که یکی از عوامل شناسایی شما در سامانه اعتبارسنجی بانکی مطابق قوانین اعلام شده، شماره تلفن همراهی است که به نام شما ثبت شده است، لذا داشتن شماره تلفن همراه برای دریافت گزارش اعتبارسنجی ضروری است",
+      collapse: false,
+    },
+    {
+      question: "گزارشات اعتباری تا چند وقت پس از دریافت معتبر هستند؟",
+      answer:
+        "هر گزارش اعتبارسنجی به مدت 24 ساعت در سامانه اعتبارمن معتبر بوده و شما می‌توانید به دفعات لازم در این بازه زمانی گزارش اعتبارسنجی خود را دریافت نمایید.",
+      collapse: false,
+    },
+    {
+      question: "آیا سامانه اعتبار من، امکان چاپ و دانلود گزارش را می‌دهد؟",
+      answer:
+        "بله، درحال حاضر سامانه اعتبارمن امکان دریافت گزارش اعتبارسنجی به صورت PDF را امکان پذیر کرده و شما می‌توانید گزارش اعتبارسنجی خود را دریافت نموده و چاپ کنید.",
+      collapse: false,
+    },
+    {
+      question: "مبلغ گزارش اعتباری چقدر است؟",
+      answer:
+        "هزینه سرویس های ارائه شده طبق قوانین تصویب شده می‌باشد و اعتبارمن در روند قیمت گذاری دخالتی ندارد. در صورت تمایل به مشاهده ریز قیمت ها اینجا کلیک کنید.",
+      collapse: false,
+    },
+    {
+      question: "آیا گزارش مستقیم به بانک داده می‌شود؟",
+      answer:
+        "بانک‌ها، موسسات مالی اعتباری، بنگاه‌های اقتصادی ارائه کننده تسهیلات امروزه برای سنجش اعتبار شما و اینکه بدانند مشتریانشان تا چه حد خوش حساب هستند، از گزارشات اعتباری استفاده می‌نمایند. شما با استفاده از سامانه اعتبار من می‌توانید به راحتی و در کمترین زمان این گزارش را دریافت نموده و میزان اعتبار خود را در نزد آنها مشاهده نمایید",
+      collapse: false,
+    },
+    {
+      question: "نحوه محاسبه امتیازات به چه صورت است؟",
+      answer:
+        "نحوه محاسبه امتیازات هر شخص براساس سابقه عملکرد بانکی وی در پنج سال گذشته محاسبه می‌گردد. اطلاعات ذکر شده در گزارش اعتباری توسط شرکت مشاوره رتبه بندی اعتباری ایران و بر اساس داده های موجود در بانک‌های کشور محاسبه می‌گردد.",
+      collapse: false,
+    },
+    {
+      question: "چند گزارش برای یک فرد وجود دارد؟",
+      answer:
+        "پاسخ استعلام از سامانه اعتبارسنجی در مورد هر شخص بنابر اینکه در پنج سال گذشته تاکنون از بانکهای عضو سامانه تسهیلات دریافت نموده باشد یا هيچ‌گونه تسهیلاتی دریافت نکرده باشد، به دو صورت خواهد بود:\n در صورت نداشتن هيچ‌گونه تسهيلات یا قرارداد، صرفاً گزارش آمار استعلام در سامانه توليد شده و در اختیار شخص قرار می‌گيرد.\nدر صورت دارا بودن تسهيلات یا قرارداد، گزارش اعتبارسنجی ارائه می‌گردد",
+      collapse: false,
+    },
+  ]);
+  const collapseThis = (index) => {
+    qAndA[index].collapse = !qAndA[index].collapse;
+    setQAndA([...qAndA]);
+    console.log(qAndA);
+  };
   return (
     <div className={"text-gray-500 bg-gray-100"}>
       <section className={"py-16 pt-32 px-4"}>
@@ -177,7 +226,7 @@ const Home2 = () => {
         <h3 className="text-brandPrimary-main text-xl font-bold pt-8">
           عوامل موثر بر رتبه‌بندی
         </h3>
-        <span className="text-gray-400 text-sm py-2">
+        <span className="text-gray-400 text-sm py-2 text-center">
           اگر می‌خواهید رتبه اعتباری خود را افزایش دهید، باید بدانید چه عواملی
           بر آن موثر است
         </span>
@@ -209,43 +258,53 @@ const Home2 = () => {
           ))}
         </div>
       </section>
-      <section className="">
-        <h3>پرسش‌های متداول</h3>
-        <span>
+      <section className="bg-gray-100 flex-col flex items-center justify-center p-4">
+        <h3 className="text-brandPrimary-main text-xl font-bold pt-8">
+          پرسش‌های متداول
+        </h3>
+        <span className="text-gray-400 text-sm py-2 text-center">
           بسیاری از کاربران ما سوالاتی مشابه سوالات شما دارند که می‌توانید با
           مشاهده و مطالعه آنها به پاسخ خود برسید. در صورت داشتن پرسش جدید، در
           بخش تماس با ما، آن را مطرح نمایید.
         </span>
-        <div>
-          <span>
-            <img src="/images/dash.svg" />
-            آیا سامانه اعتبار من، امکان چاپ و دانلود گزارش را می‌دهد ؟
-          </span>
-          <span>
-            بانک‌ها، موسسات مالی اعتباری، بنگاه‌های اقتصادی و ... امروزه برای
-            سنجش اعتبار شما و اینکه بدانند مشتریانشان تا چه حد خوش حساب هستند،
-            از گزارشات اعتباری استفاده می‌نمایند. شما با استفاده از سامانه
-            اعتبار من می‌توانید به راحتی و در کمترین زمان این گزارش را دریافت
-            نموده و میزان اعتبار خود را در نزد آنها مشاهده نمایید.
-          </span>
-          <ul>
-            <li>امکان دریافت گزارش اعتباری بدون شماره همراه وجود دارد؟</li>
-            <li>گزارشات اعتباری تا چند وقت پس از دریافت معتبر هستند؟</li>
-            <li>مبلغ گزارش اعتباری چقدر است؟</li>
-            <li>آیا گزارش مستقیم به بانک داده می‌شود؟</li>
-            <li>نحوه محاسبه امتیازات به چه صورت است؟</li>
-            <li>چند گزارش برای یک فرد وجود دارد؟</li>
-          </ul>
-        </div>
+        <ul className="w-full">
+          {qAndA.map((qa, index) => (
+            <li
+              key={index}
+              className="w-full my-6"
+              onClick={() => collapseThis(index)}
+            >
+              <span className="inline-flex cursor-pointer w-full">
+                <span className="text-xl ml-1 font-bold">
+                  {qa.collapse ? "-" : "+"}
+                </span>
+                <span className="pb-2">{qa.question}</span>
+              </span>
+              <p
+                className={`p-4 py-0 text-gray-400 text-sm overflow-hidden  ${
+                  qa.collapse ? "h-full" : "h-0"
+                }`}
+              >
+                {qa.answer || "بدون پاسخ"}
+              </p>
+            </li>
+          ))}
+        </ul>
       </section>
-      <section className={` ${""}`}>
-        <div className={""}>
-          <img className={""} src="/images/logo-etebareman2.svg" />
+      <section className="bg-gray-50 p-4 flex justify-center items-center flex-col lg:flex-row">
+        <div
+          className={
+            "flex justify-center items-center flex-col lg:flex-row lg:ml-4"
+          }
+        >
+          <img className={"p-2"} src="/images/logo-etebareman2.svg" />
         </div>
         <div className={""}>
           <div>
-            <h3>اولین قدم برای دریافت تسهیلات</h3>
-            <p>
+            <h3 className="text-brandSecondary-main text-xl font-bold my-4">
+              اولین قدم برای دریافت تسهیلات
+            </h3>
+            <p className="text-gray-500">
               پس از آشنایی با سامانه اعتبار من، اولین قدم برای دریافت تسهیلات
               دریافت گزارش اعتباری و مشاهده رتبه و امتیاز اعتباریتان است. با
               اینکار از هدر رفت وقت در بانک و موسسات جلوگیری می‌کنید
@@ -253,10 +312,9 @@ const Home2 = () => {
           </div>
           <div>
             <Link href={staticRoutes.inquiry}>
-              <Button
-                label=" دریافت گزارش اعتباری"
-                className={`lgButtonPrimary`}
-              />
+              <span className="btn btn-primary ml-2 w-48 my-4">
+                دریافت گزارش اعتباری
+              </span>
             </Link>
           </div>
         </div>

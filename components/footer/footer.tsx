@@ -7,16 +7,16 @@ interface Props {
 
 export const Footer = (props: Props) => {
   return (
-    <footer className={style.footerContainer}>
-      <div className={style.backgroundContainer}>
-        <img className={style.circle8} src="/images/circle8.svg" />
-        <img className={style.circle9} src="/images/circle8.svg" />
+    <footer className="my-10">
+      <div className="">
+        {/* <img className=""} src="/images/circle8.svg" />
+        <img className=""} src="/images/circle8.svg" /> */}
       </div>
-      <div className={style.footer}>
+      <div className="">
         <div>
           {/*
           <ul>
-            <span className={style.title}>تماس با ما</span>
+            <span className="">تماس با ما</span>
             <li>
               <img src="/images/email.svg" />
               <span className={"text"}>info@etebareman.ir</span>
@@ -39,12 +39,12 @@ export const Footer = (props: Props) => {
         */}
         </div>
         <div>
-          <legend className={style.legend}>
-            <img className={style.icon} src="/images/logo2.svg" />
-            <img className={style.dotsRight} src="/images/dots10.svg" />
-            <img className={style.dotsLeft} src="/images/dots10.svg" />
+          <legend className="">
+            <img className="" src="/images/logo2.svg" />
+            <img className="" src="/images/dots10.svg" />
+            <img className="" src="/images/dots10.svg" />
           </legend>
-          <div className={style.copyRight}>
+          <div className="">
             <span>
               کلیه حقوق مادی و معنوی این وبسایت متعلق به سامانه اعتبار من بوده و
               هرگونه استفاده از مطالب آن غیر مجاز است
@@ -54,7 +54,7 @@ export const Footer = (props: Props) => {
         </div>
         <div>
           {/* <ul>
-            <span className={style.title}>نقشه سایت</span>
+            <span className="">نقشه سایت</span>
             {pages.map((page, index) => (
               <li key={index}>
                 <span></span>
