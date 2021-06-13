@@ -18,7 +18,7 @@ const Header = (props: Props) => {
   };
 
   return (
-    <header className="sticky top-0 bg-white shadow-sm">
+    <header className="sticky top-0 bg-white shadow-sm z-50">
       <div className="hidden lg:flex py-2 justify-around items-center">
         <Link href="/">
           <span className="flex items-center">

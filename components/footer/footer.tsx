@@ -7,12 +7,12 @@ interface Props {
 
 export const Footer = (props: Props) => {
   return (
-    <footer className="my-10">
-      <div className="">
-        {/* <img className=""} src="/images/circle8.svg" />
-        <img className=""} src="/images/circle8.svg" /> */}
+    <footer className="mt-10 bg-gradient-to-r from-brandPrimary-main to-brandSecondary-dark">
+      <div className="hidden">
+        <img className="fixed" src="/images/circle8.svg" />
+        <img className="fixed" src="/images/circle8.svg" />
       </div>
-      <div className="">
+      <div className="flex text-white text-xs justify-center items-center p-4">
         <div>
           {/*
           <ul>
@@ -39,13 +39,13 @@ export const Footer = (props: Props) => {
         */}
         </div>
         <div>
-          <legend className="">
+          <legend className="hidden">
             <img className="" src="/images/logo2.svg" />
             <img className="" src="/images/dots10.svg" />
             <img className="" src="/images/dots10.svg" />
           </legend>
-          <div className="">
-            <span>
+          <div className="flex flex-col justify-center items-center">
+            <span className="text-center">
               کلیه حقوق مادی و معنوی این وبسایت متعلق به سامانه اعتبار من بوده و
               هرگونه استفاده از مطالب آن غیر مجاز است
             </span>
