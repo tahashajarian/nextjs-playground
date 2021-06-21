@@ -16,10 +16,12 @@ interface Props {
 
 const Input = (props: Props) => {
   return (
-    <div className={style.inputWrapper} style={{ width: props.width }}>
-      <label className={style.label}>{props.label}</label>
+    <div style={{ width: props.width }}>
+      <label className="block text-gray-500 mb-2 text-md">{props.label}</label>
       <input
-        className={`${style.input} ${props.error ? style.error : ""}`}
+        className={`w-full rounded-full h-12 px-6 outline-none border border-gray-400 ${
+          props.error ? "text-red-500 border-red-500" : ""
+        }`}
         value={props.value ? props.value : ""}
         onChange={props.onChange}
         placeholder={props.placeholder}
@@ -27,14 +29,17 @@ const Input = (props: Props) => {
         type={props.type}
       />
       {props.error && (
-        <div className={style.errorText}>
-          <img src="/images/information-error.svg" />
+        <div className="text-red-500 text-sm flex pt-4">
+          <img
+            className="pl-2 w-7 text-red-500"
+            src="/images/information-error.svg"
+          />
           <span>{props.errorText}</span>
         </div>
       )}
       {props.helperText && (
-        <div className={style.helperText}>
-          <img src="/images/information.svg" />
+        <div className="text-gray-500 text-sm flex pt-2">
+          <img className="pl-2 w-7" src="/images/information.svg" />
           <span>{props.helperText}</span>
         </div>
       )}

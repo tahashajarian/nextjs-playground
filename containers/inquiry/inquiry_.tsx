@@ -198,13 +198,9 @@ const Inquiry = () => {
   };
 
   return (
-    <form
-      className="flex flex-col py-20 items-center"
-      style={{ minHeight: "calc(100vh - 250px)" }}
-      onSubmit={submitForm}
-    >
+    <form className={style.inquiryContainer} onSubmit={submitForm}>
       <Spinner show={loading} />
-      <div className="flex flex-col justify-start items-center text-brandPrimary-main mb-8">
+      <div className={style.title}>
         <h2>دریافت گزارش اعتباری</h2>
       </div>
       <Switch
@@ -216,7 +212,7 @@ const Inquiry = () => {
         value={reportType}
         onchange={handleChnageReportType}
       />
-      <div className="my-4">
+      <div className={style.input}>
         <Input
           label={reportType === "haghighi" ? "شماره ملی" : "شناسه ملی شرکت"}
           onChange={handleChangeNationalCode}
@@ -231,7 +227,7 @@ const Inquiry = () => {
         />
       </div>
       {reportType === "hoghoughi" && (
-        <div className="my-4">
+        <div className={style.input}>
           <Input
             label={"شماره ملی مدیر عامل"}
             onChange={handleChangeCompanyNationCode}
@@ -244,7 +240,7 @@ const Inquiry = () => {
           />
         </div>
       )}
-      <div className="my-4">
+      <div className={style.input}>
         <Input
           label={
             reportType === "haghighi"
