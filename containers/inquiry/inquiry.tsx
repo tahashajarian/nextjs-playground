@@ -199,30 +199,31 @@ const Inquiry = () => {
 
   return (
     <form
-      className="flex flex-col py-20 items-center"
-      style={{ minHeight: "calc(100vh - 250px)" }}
+      className="flex flex-col pt-20 items-center p-4"
+      style={{ minHeight: "calc(100vh - 120px)" }}
       onSubmit={submitForm}
     >
       <Spinner show={loading} />
       <div className="flex flex-col justify-start items-center text-brandPrimary-main mb-8">
-        <h2>دریافت گزارش اعتباری</h2>
+        <h2 className="text-2xl font-bold">دریافت گزارش اعتباری</h2>
       </div>
-      <Switch
-        label={"نوع گزارش خود را انتخاب کنید"}
-        options={[
-          { title: "گزارش شخص حقیقی", value: "haghighi" },
-          { title: "گزارش شخص حقوقی", value: "hoghoughi" },
-        ]}
-        value={reportType}
-        onchange={handleChnageReportType}
-      />
-      <div className="my-4">
+      <div className="w-full max-w-sm">
+        <Switch
+          label={"نوع گزارش خود را انتخاب کنید"}
+          options={[
+            { title: "گزارش شخص حقیقی", value: "haghighi" },
+            { title: "گزارش شخص حقوقی", value: "hoghoughi" },
+          ]}
+          value={reportType}
+          onchange={handleChnageReportType}
+        />
+      </div>
+      <div className="w-full max-w-sm">
         <Input
           label={reportType === "haghighi" ? "شماره ملی" : "شناسه ملی شرکت"}
           onChange={handleChangeNationalCode}
           placeholder={"شماره ملی بدون خط تیره وارد نمایید"}
           value={nationalCode}
-          width={"400px"}
           error={nationalCodeError}
           errorText={`${
             reportType === "haghighi" ? "شماره ملی" : "شناسه ملی شرکت"
@@ -231,20 +232,19 @@ const Inquiry = () => {
         />
       </div>
       {reportType === "hoghoughi" && (
-        <div className="my-4">
+        <div className="my-4 w-full max-w-sm">
           <Input
             label={"شماره ملی مدیر عامل"}
             onChange={handleChangeCompanyNationCode}
             placeholder="شماره ملی بدون خط تیره وارد نمایید"
             value={companyNationalCode}
-            width={"400px"}
             error={companyNationalCodeError}
             errorText={"شماره ملی اشتباه است"}
             type="number"
           />
         </div>
       )}
-      <div className="my-4">
+      <div className="my-4 w-full max-w-sm">
         <Input
           label={
             reportType === "haghighi"
@@ -254,7 +254,6 @@ const Inquiry = () => {
           onChange={handleChangeMobileNumber}
           placeholder="مثلا: 0912xxxxxxx"
           value={mobileNumber}
-          width={"400px"}
           error={mobileNumberError}
           helperText={
             "دقت کنید شماره تلفن همراه باید متعلق به شماره ملی مندرج باشد."
@@ -263,33 +262,38 @@ const Inquiry = () => {
           type="number"
         />
       </div>
-      <div className={style.agreement}>
+      <div className="w-full my-3 test-md relative py-4 px-1 max-w-sm">
         <input
           type="checkbox"
           checked={acceptedRules}
           onChange={onchangeAcceptedRuls}
+          className="transform scale-125 ml-2 cursor-pointer"
         />
         <span></span>
         <span>
-          <a className={style.link} onClick={redirectToRulesPage}>
+          <a
+            className="cursor-pointer text-brandPrimary-main hover:underline"
+            onClick={redirectToRulesPage}
+          >
             قوانین اعتبار من
           </a>
           &nbsp;
           <span>را مطالعه نموده و می‌پذیرم</span>
         </span>
         {acceptedRulesError && (
-          <div className={style.errorText}>
-            <img src="/images/information-error.svg" />
+          <div className="text-red-500 text-sm flex absolute -bottom-2">
+            <img
+              className="pl-2 w-7 text-red-500"
+              src="/images/information-error.svg"
+            />
             <span>انتخاب این فیلد الزامی است</span>
           </div>
         )}
       </div>
-      <div className={style.submit}>
-        <Button
-          label="تایید و مشاهده هزینه گزارش"
-          disabled={disableSubmit}
-          className={`lgButtonPrimary`}
-        />
+      <div className="mt-8">
+        <button disabled={disableSubmit} className={`btn btn-primary`}>
+          تایید و مشاهده هزینه گزارش
+        </button>
       </div>
     </form>
   );

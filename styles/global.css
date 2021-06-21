@@ -4,7 +4,7 @@
 
 @layer components {
   .btn {
-    @apply cursor-pointer flex justify-center items-center rounded-full  whitespace-nowrap;
+    @apply cursor-pointer flex justify-center items-center rounded-full  whitespace-nowrap outline-none;
   }
   .btn-primary-outline-sm {
     @apply text-xs bg-white  text-brandPrimary-main border-solid border-2 border-brandPrimary-light py-2 px-4;

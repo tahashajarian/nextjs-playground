@@ -10,9 +10,9 @@ interface Props {
 
 const Switch = (props: Props) => {
   return (
-    <div className="select-none">
+    <div className="select-none w-full">
       <span className="text-gray-500">{props.label}</span>
-      <div className="bg-gray-200 rounded-full mx-0 mt-10 mb-20 text-gray-500 text-md h-14 flex flex-row justify-center items-center">
+      <div className="w-full bg-gray-200 rounded-full mx-0 mt-4 mb-8 text-gray-500 text-md h-14 flex flex-row justify-center items-center">
         {props.options.map((option, index) => (
           <span
             className={`transition-all h-full w-1/2 px-8 py-4 whitespace-nowrap cursor-pointer flex justify-center items-center rounded-full ${
