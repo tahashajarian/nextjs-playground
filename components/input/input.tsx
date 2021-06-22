@@ -30,7 +30,7 @@ const Input = (props: Props) => {
       {props.error && (
         <div className="text-red-500 text-sm flex absolute -bottom-7">
           <img
-            className="pl-2 w-7 text-red-500"
+            className="pl-2 w-6 text-red-500"
             src="/images/information-error.svg"
           />
           <span>{props.errorText}</span>
@@ -38,11 +38,11 @@ const Input = (props: Props) => {
       )}
       {props.helperText && (
         <div
-          className={`text-gray-500 text-sm flex ${
+          className={`text-gray-400 text-xs flex ${
             props.error ? "-bottom-14" : "-bottom-6"
           }  absolute whitespace-nowrap`}
         >
-          <img className="pl-2 w-7" src="/images/information.svg" />
+          <img className="pl-2 w-6" src="/images/information.svg" />
           <span>{props.helperText}</span>
         </div>
       )}

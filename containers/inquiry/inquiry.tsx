@@ -262,7 +262,7 @@ const Inquiry = () => {
           type="number"
         />
       </div>
-      <div className="w-full my-3 test-md relative py-4 px-1 max-w-sm">
+      <div className="w-full my-3 test-md relative py-4 px-1 max-w-sm text-gray-600">
         <input
           type="checkbox"
           checked={acceptedRules}
