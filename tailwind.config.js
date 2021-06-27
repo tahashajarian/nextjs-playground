@@ -23,6 +23,7 @@ module.exports = {
         pic_cta: "url('/images/pic_cta.png')",
         convervsation: "url('/images/bg5.svg')",
         convervsation_r: "url('/images/bg-section3.svg')",
+        zarin: 'url("/images/zarin.png")',
       }),
     },
   },

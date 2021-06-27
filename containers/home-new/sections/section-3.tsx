@@ -32,7 +32,7 @@ const steps = [
 
 const Section1 = (props: Props) => {
   return (
-    <section className="bg-gray-200 flex-col flex items-center justify-center">
+    <section className="bg-gray-200 flex-col flex items-center justify-center pt-8">
       <h2 className=" text-brandPrimary-main text-xl font-bold pt-8">
         راهنمای دریافت گزارش اعتباری
       </h2>

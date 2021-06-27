@@ -58,12 +58,15 @@ const PrePayment = () => {
   };
 
   return (
-    <form className={style.prePaymentContainer} onSubmit={submitForm}>
+    <form
+      className="flex flex-col justify-start p-4 pt-24 max-w-sm m-auto"
+      onSubmit={submitForm}
+    >
       <Spinner show={loading} />
-      <div className={style.title}>
-        <h2>دریافت گزارش اعتباری</h2>
+      <div className="flex flex-col justify-start items-center text-brandPrimary-main mb-2">
+        <h2 className="text-xl xl:text-2xl font-bold">دریافت گزارش اعتباری</h2>
       </div>
-      <div className={style.description}>
+      <div className={"text-center mt-4 text-gray-500 text-sm"}>
         <div>
           درخواست شما برای شماره ملی
           <b> {state.nationalCode} </b>و شماره همراه
@@ -78,50 +81,57 @@ const PrePayment = () => {
         </div>
         <div>
           <span>خطایی وجود دارد؟</span>
-          <span className={style.change} onClick={redirectToInquiry}>
+          <span
+            className="text-brandSecondary-main hover:underline cursor-pointer p-2 text-xs"
+            onClick={redirectToInquiry}
+          >
             اصلاح اطلاعات
           </span>
         </div>
       </div>
-      <div className={style.price}>
-        <div>
-          <div>
-            <span className={style.titleSpan}>مبلغ گزارش:</span>
+      <div className="border border-gray-300 rounded-md bg-gray-200 my-6 text-sm text-gray-600">
+        <div className="p-2">
+          <div className="w-full flex justify-center items-center p-2">
+            <span className="w-full">مبلغ گزارش:</span>
             <span>
-              <span className={style.pricePrimary}>10,000</span>
-              <span>تومان</span>
+              <span className="text-brandPrimary-main p-2 text-xl">10,000</span>
+              <span className="text-gray-500 text-sm">تومان</span>
             </span>
           </div>
-          <div>
-            <span className={style.titleSpan}>9% مالیات بر ارزش افزوده:</span>
+          <div className="w-full flex justify-center items-center p-2">
+            <span className="w-full">9% مالیات بر ارزش افزوده:</span>
             <span>
-              <span className={style.priceTax}>0</span>
-              <span>تومان</span>
+              <span className="p-2 text-gray-900 text-xl">0</span>
+              <span className="text-gray-500 text-sm">تومان</span>
             </span>
           </div>
         </div>
-        <hr />
-        <div className={style.total}>
-          <div>
-            <span className={style.titleSpan}>مبلغ قابل پرداخت:</span>
+        <hr className="border-gray-300" />
+        <div className="py-3 px-2">
+          <div className="w-full flex justify-center items-center p-2">
+            <span className="w-full">مبلغ قابل پرداخت:</span>
             <span>
-              <span className={style.priceTotal}>10,000</span>
-              <span>تومان</span>
+              <span className="text-brandSecondary-main p-2 text-xl font-bold">
+                10,000
+              </span>
+              <span className="text-gray-500 text-sm">تومان</span>
             </span>
           </div>
         </div>
       </div>
-      <div className={style.paymentMethodsContainer}>
+      <div className="mt-2 flexcolumn">
         <span>انتخاب درگاه پرداخت</span>
-        <div className={style.paymentMethods}>
+        <div className="flexrow">
           <div
             data-id="0"
             onClick={() => handleChangepaymentMethod(0)}
-            className={`${style.paymentMethod} ${
-              paymentMethod === 0 ? style.active : undefined
+            className={`broder-1 border-solid border-gray-400 w-12 h-12 flexrow cursor-pointer my-4 mx-6 rounded-md ${
+              paymentMethod === 0
+                ? "shadow-md  border-brandPrimary-main"
+                : undefined
             }`}
           >
-            <span className={style.zarin}></span>
+            <span className="w-full h-full bg-cover bg-zarin"></span>
           </div>
           {/* <div
             data-id="1"
@@ -134,16 +144,17 @@ const PrePayment = () => {
           </div> */}
         </div>
       </div>
-      <div className={style.submit}>
-        <Button
-          label="انتقال به درگاه و پرداخت آنلاین"
-          disabled={false}
-          className={`lgButtonSecondry`}
-        />
+      <div className="w-full flexcolumn mt-6">
+        <button className={`btn btn-primary-lg shadow-lg`}>
+          انتقال به درگاه و پرداخت آنلاین
+        </button>
+        <span
+          className="text-sm text-gray-600 mt-3 cursor-pointer hover:underline"
+          onClick={redirectToHome}
+        >
+          انصراف و لغو پرداخت
+        </span>
       </div>
-      <span className={style.cancel} onClick={redirectToHome}>
-        انصراف و لغو پرداخت
-      </span>
     </form>
   );
 };

@@ -21,8 +21,9 @@ import {
 import { useRouter } from "next/router";
 import { useToasts } from "react-toast-notifications";
 const Inquiry = () => {
-  const [reportType, setReportType] =
-    useState<"haghighi" | "hoghoughi">("haghighi");
+  const [reportType, setReportType] = useState<"haghighi" | "hoghoughi">(
+    "haghighi"
+  );
   const handleChnageReportType = (reportType) => {
     setReportType(reportType);
   };
@@ -199,13 +200,12 @@ const Inquiry = () => {
 
   return (
     <form
-      className="flex flex-col pt-20 items-center p-4"
-      style={{ minHeight: "calc(100vh - 120px)" }}
+      className="flex flex-col pt-20 items-center p-4 justify-start max-w-sm m-auto"
       onSubmit={submitForm}
     >
       <Spinner show={loading} />
       <div className="flex flex-col justify-start items-center text-brandPrimary-main mb-8">
-        <h2 className="text-2xl font-bold">دریافت گزارش اعتباری</h2>
+        <h2 className="text-xl xl:text-2xl font-bold">دریافت گزارش اعتباری</h2>
       </div>
       <div className="w-full max-w-sm">
         <Switch
@@ -290,8 +290,13 @@ const Inquiry = () => {
           </div>
         )}
       </div>
-      <div className="mt-8">
-        <button disabled={disableSubmit} className={`btn btn-primary`}>
+      <div className="mt-12">
+        <button
+          disabled={disableSubmit}
+          className={`btn btn-primary-lg shadow-lg ${
+            disableSubmit ? "bg-gray-400 shadow-none" : ""
+          }`}
+        >
           تایید و مشاهده هزینه گزارش
         </button>
       </div>

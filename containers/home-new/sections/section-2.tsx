@@ -11,7 +11,7 @@ const ptags = [
 
 const Section2 = (props: Props) => {
   return (
-    <section className="py-16 px-4 pt-32 flex-col flex items-center justify-center  lg:px-12">
+    <section className="py-16 px-4 pt-32 flex-col flex items-center justify-center  p-4 md:px-16 lg:px-24 relative 2xl:pr-72">
       <h2 className="w-full text-brandPrimary-main text-xl font-bold border-r-4 border-brandSecondary-main p-2 mb-4">
         رتبه اعتباری چیست؟
       </h2>

@@ -55,7 +55,7 @@ const Section1 = (props: Props) => {
     console.log(qAndA);
   };
   return (
-    <section className="bg-gray-100 flex-col flex items-center justify-center p-4">
+    <section className="bg-gray-100 flex-col flex items-center justify-center p-4 md:px-16 lg:px-24 relative 2xl:pr-72">
       <h3 className="text-brandPrimary-main text-xl font-bold pt-8">
         پرسش‌های متداول
       </h3>

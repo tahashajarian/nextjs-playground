@@ -63,18 +63,18 @@ const Otp = () => {
           otp,
         },
         {
-          responseType: "blob",
+          // responseType: "blob",
         }
       )
       .then((response) => {
         setLoading(false);
-        if (response.data) {
+        if (response.data.statusCode === 200) {
           downloadFile(
             response.data,
             `report-${nationalCode}-${new Date().getTime()}.pdf`
           );
+          route.push("/");
         }
-        route.push("/");
       })
       .catch((err) => {
         setLoading(false);
@@ -83,25 +83,30 @@ const Otp = () => {
   };
 
   return (
-    <form className={style.container} onSubmit={submitForm}>
+    <form
+      className="flex flex-col justify-start p-4 pt-24 max-w-sm m-auto"
+      onSubmit={submitForm}
+    >
       <Spinner show={loading} />
-      <div className={style.payment}>
+      <div className="my-6 text-center">
         {hashCode ? (
-          <span className={style.success}>پرداخت شما با موفقیت انجام شد</span>
+          <span className="text-brandSecondary-main">
+            پرداخت شما با موفقیت انجام شد
+          </span>
         ) : (
-          <span className={style.fail}>پرداخت انجام نشد</span>
+          <span className="text-red-500">پرداخت انجام نشد</span>
         )}
         {hashCode ? (
-          <p>
+          <p className="text-justify my-6 text-md text-gray-600">
             گزارش اعتباری برای شماره ملی
-            <b> {nationalCode} </b>و شماره همراه
-            <b> {mobileNumber} </b>
+            <b className="m-2"> {nationalCode} </b>و شماره همراه
+            <b className="m-2"> {mobileNumber} </b>
             {companyNationalCode
               ? ` و شماره ملی مدیر عامل ${companyNationalCode} `
               : ""}
             آماده دریافت است لطفا کد یکبار مصرف که به شماره همراه ثبت شده ارسال
             شده در کادر زیر وارد نمایید سپس دکمه
-            <b> دانلود گزارش اعتباری </b>
+            <b className="m-2"> دانلود گزارش اعتباری </b>
             را بزنید
           </p>
         ) : (
@@ -109,18 +114,17 @@ const Otp = () => {
         )}
       </div>
       {hashCode ? (
-        <div>
-          <div>
+        <div className="flexcolumn">
+          <div className="w-full">
             <Input
               label={""}
               onChange={(e: any) => setOtp(e.target.value)}
               placeholder={"کد یک بار مصرف را وارد کنید"}
               value={otp}
-              width={"400px"}
               type="number"
             />
           </div>
-          <div className={style.timer}>
+          <div className="py-2 text-gray-500 text-sm">
             {timer > 0 ? (
               <div>
                 {`0${Math.trunc(timer / 60)}:${
@@ -131,34 +135,24 @@ const Otp = () => {
             ) : (
               <div>
                 <span>کد را دریافت نکردید؟</span>
-                <span className={style.resend} onClick={resend}>
+                <span
+                  className="text-brandPrimary-main px-2 cursor-pointer hover:underline"
+                  onClick={resend}
+                >
                   ارسال مجدد
                 </span>
               </div>
             )}
           </div>
-          <div className={style.submit}>
-            {/* <button
-              className={`${utils.lgButtonPrimary} ${utils.shadowPrimary}`}
-              type="submit"
-              disabled={!otp}
-            >
+          <div className="mt-6">
+            <button className={`btn btn-primary-lg shadow-lg`} type="submit">
               ارسال کد و دریافت گزارش
-            </button> */}
-            <Button
-              label="ارسال کد و دریافت گزارش"
-              disabled={!otp}
-              className={`lgButtonPrimary`}
-              type="submit"
-            />
+            </button>
           </div>
         </div>
       ) : (
         <Link href={staticRoutes.home}>
-          <button
-            className={`${utils.lgButtonPrimary} ${utils.shadowPrimary}`}
-            type="button"
-          >
+          <button className={`btn btn-secondray-lg shadow-lg`} type="button">
             بازگشت به صفحه اصلی{" "}
           </button>
         </Link>

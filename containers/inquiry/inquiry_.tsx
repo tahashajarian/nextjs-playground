@@ -21,8 +21,9 @@ import {
 import { useRouter } from "next/router";
 import { useToasts } from "react-toast-notifications";
 const Inquiry = () => {
-  const [reportType, setReportType] =
-    useState<"haghighi" | "hoghoughi">("haghighi");
+  const [reportType, setReportType] = useState<"haghighi" | "hoghoughi">(
+    "haghighi"
+  );
   const handleChnageReportType = (reportType) => {
     setReportType(reportType);
   };
@@ -218,7 +219,6 @@ const Inquiry = () => {
           onChange={handleChangeNationalCode}
           placeholder={"شماره ملی بدون خط تیره وارد نمایید"}
           value={nationalCode}
-          width={"400px"}
           error={nationalCodeError}
           errorText={`${
             reportType === "haghighi" ? "شماره ملی" : "شناسه ملی شرکت"
@@ -233,7 +233,6 @@ const Inquiry = () => {
             onChange={handleChangeCompanyNationCode}
             placeholder="شماره ملی بدون خط تیره وارد نمایید"
             value={companyNationalCode}
-            width={"400px"}
             error={companyNationalCodeError}
             errorText={"شماره ملی اشتباه است"}
             type="number"
@@ -250,7 +249,6 @@ const Inquiry = () => {
           onChange={handleChangeMobileNumber}
           placeholder="مثلا: 0912xxxxxxx"
           value={mobileNumber}
-          width={"400px"}
           error={mobileNumberError}
           helperText={
             "دقت کنید شماره تلفن همراه باید متعلق به شماره ملی مندرج باشد."

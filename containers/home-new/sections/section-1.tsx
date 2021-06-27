@@ -6,9 +6,9 @@ interface Props {}
 
 const Section1 = (props: Props) => {
   return (
-    <section className={"py-16 pt-32 px-4 lg:px-12 relative"}>
+    <section className={"py-16 pt-32 p-4 md:px-16 lg:px-24 relative 2xl:pr-72"}>
       <img
-        className="hidden lg:block absolute left-0 top-0 w-1/2"
+        className="hidden lg:block absolute left-0 top-0 w-1/2 lg:max-w-3xl"
         src="/images/left-silde.png"
       />
 

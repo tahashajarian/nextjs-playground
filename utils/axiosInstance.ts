@@ -18,7 +18,6 @@ axiosInstance.interceptors.request.use(async (request) => {
   request.baseURL = process.env.serverAddress;
   request.headers["x-apikey"] = [process.env.apiKey];
   request.headers["Access-Control-Allow-Origin"] = ["*"];
-
   return request;
 });
 
@@ -52,10 +51,7 @@ const successHandler = (response: any) => {
     if (response.data.message) {
       notification(response.data.message, color);
     } else if (response.data.statusCode === 500) {
-      notification(
-        `خطا در سرور => ${response.config.method} => ${response.config.url} `,
-        "error"
-      );
+      notification(`خطا در سرور`, "error");
     } else if (response.data.statusCode === 401) {
       notification("خطای عدم دسترسی", "error");
       console.log(

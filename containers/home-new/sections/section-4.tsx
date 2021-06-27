@@ -13,7 +13,7 @@ const Section1 = (props: Props) => {
             <h3 className="text-brandSecondary-main text-lg font-bold mb-4">
               همین حالا گزارش اعتباری خود را دریافت کنید
             </h3>
-            <p className="text-white text-justify text-sm max-w-md">
+            <p className="text-white text-justify text-sm max-w-md xl:max-w-xl">
               بدون نیاز به مراجعه به بانک و تنها با چند کلیک، ظرف چند دقیقه در
               سامانه اعتبار من گزارش اعتباری خود را دریافت و اقدام سنجش خود جهت
               دریافت تسهیلات در بانک‌ها و موسسات اقتصادی نمایید

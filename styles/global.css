@@ -31,6 +31,15 @@
   .btn-primary {
     @apply text-white bg-brandPrimary-main py-2 px-6;
   }
+  .btn-primary-lg {
+    @apply text-white bg-brandPrimary-main py-4 px-8;
+  }
+  .flexrow {
+    @apply flex flex-row justify-center items-center;
+  }
+  .flexcolumn {
+    @apply flex flex-col justify-center items-center;
+  }
 }
 
 @layer base {

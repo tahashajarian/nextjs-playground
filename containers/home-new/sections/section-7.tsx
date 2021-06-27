@@ -19,7 +19,7 @@ const Section1 = (props: Props) => {
           <h3 className="text-brandSecondary-main text-xl font-bold my-4">
             اولین قدم برای دریافت تسهیلات
           </h3>
-          <p className="text-gray-500 max-w-lg">
+          <p className="text-gray-500 max-w-lg 2xl:max-w-xl">
             پس از آشنایی با سامانه اعتبار من، اولین قدم برای دریافت تسهیلات
             دریافت گزارش اعتباری و مشاهده رتبه و امتیاز اعتباریتان است. با
             اینکار از هدر رفت وقت در بانک و موسسات جلوگیری می‌کنید
