@@ -16,8 +16,10 @@ const Section2 = (props: Props) => {
         رتبه اعتباری چیست؟
       </h2>
       <div className="w-full">
-        {ptags.map((p) => (
-          <p className="text-justify text-sm pb-4 max-w-lg">{p}</p>
+        {ptags.map((p, index) => (
+          <p key={index} className="text-justify text-sm pb-4 max-w-lg">
+            {p}
+          </p>
         ))}
       </div>
 
