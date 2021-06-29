@@ -69,8 +69,9 @@ const Otp = () => {
       .then((response) => {
         setLoading(false);
         if (response.data.statusCode === 200) {
+          const blob = new Blob([response.data]);
           downloadFile(
-            response.data,
+            blob,
             `report-${nationalCode}-${new Date().getTime()}.pdf`
           );
           route.push("/");
