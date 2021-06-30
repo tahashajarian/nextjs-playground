@@ -20,6 +20,10 @@ export default function Layout({ children, home }) {
         <link rel="icon" href="/images/logo.svg" />
         <meta name="description" content="My Credit" />
         <meta name="og:title" content={siteTitle} />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
       </Head>
       <main className="mb-auto">
         <Header pages={pages} />
