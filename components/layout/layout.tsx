@@ -7,10 +7,10 @@ import { Footer } from "../footer/footer";
 
 export const siteTitle = "اعتبار من";
 export const pages = [
-  { path: "/contact", title: "رتبه اعتباری چیست؟" },
-  { path: "/contact", title: "راهنمای دریافت گزارش اعتباری" },
+  { path: "/", title: "رتبه اعتباری چیست؟" },
+  { path: "/", title: "راهنمای دریافت گزارش اعتباری" },
   { path: "/aboute", title: "درباره ما" },
-  { path: "/contact", title: "تماس با ما" },
+  { path: "/", title: "تماس با ما" },
 ];
 
 export default function Layout({ children, home }) {
