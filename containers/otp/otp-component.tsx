@@ -9,7 +9,7 @@ import { apies } from "../../constants/api";
 import { downloadFile } from "../../utils/download";
 
 const Otp = () => {
-  const timeWait = 10;
+  const timeWait = 120;
   const [timer, setTimer] = useState(timeWait);
   const [hashCode, setHashCode] = useState<any>();
   const [nationalCode, setNationalCode] = useState<any>();
@@ -60,7 +60,7 @@ const Otp = () => {
           otp,
         },
         {
-          // responseType: "blob",
+          responseType: "blob",
         }
       )
       .then((response) => {
@@ -75,7 +75,7 @@ const Otp = () => {
             response.data,
             `report-${nationalCode}-${new Date().getTime()}.pdf`
           );
-          // route.push("/");
+          route.push("/");
         }
       })
       .catch((err) => {
