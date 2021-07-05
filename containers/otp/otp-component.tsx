@@ -9,7 +9,7 @@ import { apies } from "../../constants/api";
 import { downloadFile } from "../../utils/download";
 
 const Otp = () => {
-  const timeWait = 120;
+  const timeWait = 10;
   const [timer, setTimer] = useState(timeWait);
   const [hashCode, setHashCode] = useState<any>();
   const [nationalCode, setNationalCode] = useState<any>();
@@ -60,7 +60,7 @@ const Otp = () => {
           otp,
         },
         {
-          // responseType: "blob",
+          responseType: "blob",
         }
       )
       .then((response) => {
@@ -72,10 +72,10 @@ const Otp = () => {
         } else if (response.data) {
           const blob = new Blob([response.data]);
           downloadFile(
-            blob,
+            response.data,
             `report-${nationalCode}-${new Date().getTime()}.pdf`
           );
-          route.push("/");
+          // route.push("/");
         }
       })
       .catch((err) => {
@@ -146,7 +146,7 @@ const Otp = () => {
               </div>
             )}
           </div>
-          <div className="mt-8 xl:mg-12">
+          <div className="mt-12 xl:mt-16">
             <button className={`btn btn-primary-lg shadow-lg`} type="submit">
               ارسال کد و دریافت گزارش
             </button>
