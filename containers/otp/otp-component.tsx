@@ -146,7 +146,7 @@ const Otp = () => {
               </div>
             )}
           </div>
-          <div className="mt-6">
+          <div className="mt-8 xl:mg-12">
             <button className={`btn btn-primary-lg shadow-lg`} type="submit">
               ارسال کد و دریافت گزارش
             </button>
