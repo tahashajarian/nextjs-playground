@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from "react";
-import style from "./otp.module.scss";
 import { useRouter } from "next/router";
 import Input from "../../components/input/input";
-import utils from "../../components/utils.module.scss";
 import Link from "next/link";
 import { staticRoutes } from "../../constants/routes";
 import Spinner from "../../components/spinner/spinner";
 import axiosInstance from "../../utils/axiosInstance";
 import { apies } from "../../constants/api";
-import Button from "../../components/button/button";
 import { downloadFile } from "../../utils/download";
 
 const Otp = () => {
@@ -58,7 +55,7 @@ const Otp = () => {
     setLoading(true);
     axiosInstance
       .post(
-        apies.generateReport(hashCode),
+        apies.generateReportPdf(hashCode),
         {
           otp,
         },
