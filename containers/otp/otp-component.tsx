@@ -65,7 +65,11 @@ const Otp = () => {
       )
       .then((response) => {
         setLoading(false);
-        if (response.data.statusCode === 200) {
+        if (response.data.statusCode) {
+          console.log(
+            "response genarate report have status code then is not pdf"
+          );
+        } else if (response.data) {
           const blob = new Blob([response.data]);
           downloadFile(
             blob,
