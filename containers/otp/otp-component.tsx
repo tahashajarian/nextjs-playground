@@ -41,7 +41,7 @@ const Otp = () => {
   const resend = () => {
     setLoading(true);
     axiosInstance
-      .post(apies.renewToken(hashCode), {})
+      .get(apies.renewToken(hashCode), {})
       .then((response) => {
         setLoading(false);
         if (response.data) {

@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Switch from "../../components/switch/switch";
 import { staticRoutes } from "../../constants/routes";
-import style from "./inquiry.module.scss";
-import utils from "../../components/utils.module.scss";
 import Input from "../../components/input/input";
-import Button from "../../components/button/button";
 import {
   checkMelliCode,
   checkMobile,
