@@ -60,7 +60,7 @@ const Otp = () => {
           otp,
         },
         {
-          responseType: "blob",
+          // responseType: "blob",
         }
       )
       .then((response) => {
