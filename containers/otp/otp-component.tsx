@@ -54,28 +54,26 @@ const Otp = () => {
     e.preventDefault();
     setLoading(true);
     axiosInstance
-      .post(
-        apies.generateReportPdf(hashCode),
-        {
-          otp,
-        },
-        {
-          responseType: "blob",
-        }
-      )
+      .post(apies.validateOtp(hashCode), {
+        otp,
+      })
       .then((response) => {
         setLoading(false);
-        if (response.data.statusCode) {
-          console.log(
-            "response genarate report have status code then is not pdf"
-          );
-        } else if (response.data) {
-          const blob = new Blob([response.data]);
-          downloadFile(
-            response.data,
-            `report-${nationalCode}-${new Date().getTime()}.pdf`
-          );
-          route.push("/");
+        if (response.data.statusCode === 200) {
+          axiosInstance
+            .post(
+              apies.generateReportPdf(hashCode),
+              { otp },
+              { responseType: "blob" }
+            )
+            .then((response) => {
+              if (response.data)
+                downloadFile(
+                  response.data,
+                  `report-${nationalCode}-${new Date().getTime()}.pdf`
+                );
+              // route.push("/");
+            });
         }
       })
       .catch((err) => {
