@@ -45,8 +45,8 @@ const Inquiry = () => {
   const [acceptedRulesError, setAcceptedRulesError] = useState(false);
 
   useEffect(() => {
-    console.log("disabled submit => ", disableSubmit);
-  }, [disableSubmit]);
+    if (companyNationalCode) setReportType("hoghoughi");
+  }, []);
 
   useEffect(() => {
     if (reportType === "haghighi") {
