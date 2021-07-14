@@ -17,8 +17,8 @@ const Otp = () => {
   const [companyNationalCode, setCompanyNationalCode] = useState<any>();
   const [loading, setLoading] = useState(false);
   const [otp, setOtp] = useState("");
-
   const route = useRouter();
+
   useEffect(() => {
     const url = new URL("http://example" + route.asPath);
     setHashCode(url.searchParams.get("hashCode"));
